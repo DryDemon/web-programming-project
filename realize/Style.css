@@ -285,3 +285,8 @@ section .Container .MinimumBid{
     
     padding-left: 1rem;
 }
+
+fieldset{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2rem;
+}
