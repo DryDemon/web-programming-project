@@ -1,0 +1,287 @@
+header{
+    background:url('bg-masthead.jpg')no-repeat center center;
+    background-size:cover;
+    position: relative;
+background-color: #343a40;
+background-size: cover;
+padding-top: 8rem;
+padding-bottom: 8rem;
+
+
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    margin: 0;
+font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+text-align: left;
+background-color: #fff;
+  }
+
+  .NavMenuContainer{
+    display: inline-block;
+
+}
+
+
+.SearchPara{
+    color: white;
+}
+
+.SearchBarButton button{
+background-color:#007bff ;
+color: white;
+border-color: #007bff;
+    border-radius: .25rem;
+    line-height: 1.5;
+}
+
+.SearchContainer{
+  padding-left: 30%;
+}
+
+
+.form-input{
+width: 50%;
+height: calc(1.5em + .75rem + 2px);
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #495057;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid #ced4da;
+border-radius: .25rem;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.forme-button{
+height: calc(1.5em + .75rem + 2px);
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+}
+
+.SearchPara h1{
+    padding-left: 16%;
+}
+
+.NavMenuButtons a{
+   
+    display: inline-block;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration:none;
+    
+}
+
+.SideBar-nav a
+{
+    text-decoration:none;
+}
+.SideBar-nav{
+   list-style-type: none; 
+}
+
+.NavMenuButtons
+{
+    float: right;
+}
+  
+.navBar
+{
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width:768px) {
+    .navBar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+.navBar .NavMenuContainer{
+    font-weight: bold;
+    color: inherit;
+    max-width: 1140px;
+    width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
+
+.navBar .NavMenuContainer:hover{
+    color: #222;
+}
+
+.navBar .NavMenuContainer img{
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+}
+
+.product-list{
+    
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+section .Container {
+    
+    padding: 150px;
+}
+
+section .Container .ProductContainer{
+  text-align: left;
+  font: normal 14px sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #dbe3e7;
+  border-radius: 3px;
+  box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+}
+
+section .Container .ProductImage{
+    display: block;
+  text-align: center;
+  box-shadow: 0 0 20px 8px #f3f3f3 inset;
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+}
+
+section .Container .ProductImage img{
+    height: 130px; 
+}
+
+section .Container h2{
+    font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  font-weight: 800;
+}
+
+section .Container h2 a{
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+section .Container a.small-text {
+    color: #808080;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: right;
+    font-size: 12px;
+}
+
+section .Container p.description{
+    color: #5d5d5d;
+    line-height: 1.45;
+    white-space: normal;
+    margin-bottom: 20px;
+}
+
+section .Container button{
+  border-radius: 2px;
+  background: #87bae1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+  border: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 8px 20px;
+}
+
+section .Container button:active{
+  background: #87bae1;
+  color: #fff;
+  border: 0;
+}
+
+section .Container button:focus{
+    background: #87bae1;
+    outline: none;
+    color: #fff;
+}
+
+section .Container button:hover{
+    background: #66ABE0;
+    color: #fff;
+}
+
+section .Container button:focus:active {
+    background: #87bae1;
+    outline: none;
+    color: #fff;
+}
+
+section .Container .MinimumBid{
+    color: #4e4e4e;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 5px;
+  text-align: right;
+}
+  
+
+.SideBarContainer{
+    
+    max-width: 8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    position: fixed;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.SideBar-nav a {
+    color: white;
+}
+
+
+.container{
+    text-align: left;
+    
+    padding-left: 10rem;
+}
+
+.container a{
+    padding-bottom: 3rem;
+    
+    padding-left: 1rem;
+}
