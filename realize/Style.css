@@ -260,7 +260,7 @@ section .Container .MinimumBid{
 .SideBarContainer{
     
     max-width: 8rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 123, 255, 0.5);
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-right: 1rem;
