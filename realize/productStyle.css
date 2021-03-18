@@ -1,0 +1,149 @@
+body{
+    background-color: #4e73df;
+background-image: linear-gradient(180deg,#4e73df 10%,#224abe);
+background-size: cover;
+height: 100%;
+}
+
+.MainTitle h4{
+    text-align: center;
+    color: white;
+}
+
+.MainTitle{
+    padding-top: 1rem;
+}
+
+.container{
+    width: 100%;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    font-family: Nunito;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #858796;
+}
+
+.card{
+margin: 5rem;
+margin-top: 3rem;
+box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+position:relative;
+display: flex;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border: 1px solid #e3e6f0;
+border-radius: .35rem;
+}
+
+.cardBody{
+    flex: 1 1 auto;
+min-height: 1px;
+padding: 1.25rem;
+}
+
+.row{
+    display: flex;
+flex-wrap: wrap;
+margin-right: -.75rem;
+margin-left: -.75rem;
+}
+
+.col{
+    position: relative;
+width: 100%;
+padding-right: .75rem;
+padding-left: .75rem;
+}
+
+.part{
+    padding: 3rem!important;
+}
+
+.Title{
+    text-align: center!important;
+}
+
+.Title h4{
+    color: #858796;
+font-size: 1.5rem;
+font-weight: 400;
+line-height: 1.2;
+margin-bottom: 2rem;
+}
+
+.product, .PDescription{
+    margin-bottom: 1rem;
+}
+
+.PName{
+    position: relative;
+width: 100%;
+padding-right: .75rem;
+padding-left: .75rem;
+}
+
+button, input, select {
+    text-align: center;
+    overflow: visible;
+  }
+
+.small{
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.back{
+    top: 2rem;
+    right: 3rem;
+    position:absolute;
+}
+
+
+.small, .large{
+display: block;
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #6e707e;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid #d1d3e2;
+border-radius: .35rem;
+margin-left: 33%;
+}
+
+.large{
+    width: 40%;
+    margin-left: 28.5%;
+    margin-bottom: 2rem;
+}
+
+button{
+    box-shadow: 0 0 0 .2rem rgba(105,136,228,.5);
+    color: #fff;
+background-color: #2653d4;
+border-color: #244ec9;
+border: 1px solid transparent;
+padding: .375rem .75rem;
+font-size: 1rem;
+line-height: 1.5;
+border-radius: .35rem;
+}
+
+button:hover {
+    color: #858796;
+    text-decoration: none;
+  }
+  
+  
+  
+  
