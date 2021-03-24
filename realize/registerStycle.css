@@ -1,0 +1,152 @@
+header{
+    background:url('bg-masthead.jpg')no-repeat center center;
+    background-size:cover;
+    position: relative;
+background-color: #343a40;
+background-size: cover;
+padding-top: 8rem;
+padding-bottom: 8rem;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+background: #fafafa;
+margin: 0;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+text-align: left;
+background-color: #fff;
+  }
+
+  .NavMenuContainer{
+    display: inline-block;
+    width: 100%;
+
+}
+
+button{
+    background-color:#007bff ;
+    color: white;
+    border-color: #007bff;
+        border-radius: .25rem;
+        line-height: 1.5;
+    }
+
+    .forme-button{
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        }
+
+        .NavMenuButtons button{
+   
+            display: inline-block;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: .25rem;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration:none;
+        }
+
+        .NavMenuButtons
+{
+    margin-left: 90%;
+}
+
+.navBar
+{
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navBar .NavMenuContainer{
+    font-weight: bold;
+    color: inherit;
+    width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
+
+.navBar .NavMenuContainer:hover{
+    color: #222;
+}
+
+.navBar .NavMenuContainer img{
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+}
+
+.container{
+    text-align: left;
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+
+.container a{
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+}
+
+.SearchContainer{
+    margin-left : 26%;
+    max-width: 36%;
+    text-align: center;
+}
+
+.form-input{
+    text-align: center;
+    float : right;
+    width: 70%;
+    height: calc(.75em + .75rem + 2px);
+    padding: .375rem .75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+.form-group{
+    margin-bottom: 4rem;
+}
+
+.form-group label{
+    margin-left: 11.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.registerB{
+    margin-left: 11.2rem;
+}
+
+button:hover{
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.title{
+    margin-left: 26%;
+    color: white;
+}

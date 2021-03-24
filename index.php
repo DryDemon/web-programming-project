@@ -27,10 +27,10 @@
             <?php
 require_once('backend/userConnection.php');
 $user = isUserConnected();
-if($user)
-echo{'<div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="/login">Sign In</a></div>
-<div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="/register">Sign Up</a></div>'            ?>
-}        </div>
+if($user){
+echo('<div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="/login">Sign In</a></div>
+<div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="/register">Sign Up</a></div>');} ?>
+    </div>
     </nav>
     <header class="masthead text-white text-center" style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
         <div class="overlay"></div>

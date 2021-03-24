@@ -1,0 +1,8 @@
+{
+    "name" : "equipe/ebay",
+    "description": "web programming project",
+    "require": {
+      "simplon/mysql": "^2.1",
+      "firebase/php-jwt": "^5.2"
+    }
+  }
