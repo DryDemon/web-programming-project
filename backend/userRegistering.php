@@ -20,8 +20,9 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
         $count++;
         $nick = $_POST['username'];
         addUserInDB("null","null",$_POST['username'],$_POST['email'],"null","null","null",$_POST['password']);
+        connectUser($_POST['email'], $_POST['password']);
         //connectuser
-        header( "Location: http://localhost/web-programming-project/realize/shop.html");
+        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");
        
     }
     else{

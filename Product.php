@@ -23,26 +23,26 @@
                             </div>
                             <form class="product">
                                 <div class="PName">
-                                    <div ><input class="small" type="text" placeholder="Product Name"></div>
+                                    <div ><input class="small" name="ProductName" type="text" placeholder="Product Name"></div>
                                  </div>
                                  <div class="PCategory" style="margin-left: 2%;">
-                                    <div ><input class="small" list="browsers" placeholder="Choose the category">
+                                    <div ><input class="small" name="ProductCategory" list="browsers" placeholder="Choose the category">
                                         <datalist id="browsers">
                                           <option value="Computer">
                                           <option value="Phone & SmartPhone">
                                         </datalist></div>
                                  </div>
                                  <div class="PType" style="margin-left: 5%;">
-                                 <select class="small" id="Type">
+                                 <select class="small" name="ProductType" id="Type">
                                     <option value="">Choose a Type of Selling</option>
                                     <option value="French">Auction</option>
                                     <option value="American">Best Offer</option>
                                     <option value="Canadian">Instant Buy</option>
                                 </select>
                                 </div>
-                                 <div class="PDescription"><input class="large" type="textarea" placeholder="Product Description" style="height: 200px;"></div>
+                                 <div class="PDescription"><input class="large" name="ProductDescription" type="textarea" placeholder="Product Description" style="height: 200px;"></div>
                                  <div class="PPrice">
-                                     <div class="Price" ><input class="small" type="number" placeholder="Product Price ($)"></div>
+                                     <div class="Price" ><input class="small" name="ProductPrice" type="number" placeholder="Product Price ($)"></div>
                                  </div>
                                  <div class="PEd"><a style="margin-left: 33%;">Select a *DeadLine* if needed</a> <input class="small" type="date" ></div>
                                  <div class="PPhoto">

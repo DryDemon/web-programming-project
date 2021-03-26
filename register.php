@@ -20,7 +20,7 @@
         </nav>
 
         <header>
-           <form method="post" action="http://localhost/web-programming-project/backend/userRegistering.php">
+           <form method="post" action="./backend/userRegistering.php">
             <div class="SearchContainer">
                 <div class="title"><h3>Register yourself here</h3>
                 <hr></div>
@@ -38,7 +38,7 @@
               </div>
               <div class="form-group">
                 <label>Password</label><br>
-                <input type="text" name="password" class="form-input">
+                <input type="password" name="password" class="form-input">
               </div>
               <div class="registerB">
                 <button type="submit" class="forme-button">Sign Up</button>

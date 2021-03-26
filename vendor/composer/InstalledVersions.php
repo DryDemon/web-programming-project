@@ -30,11 +30,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '893b248ef232d0a8ef0dad7598990766d2020cc3',
+    'reference' => '5a298a8bc037d9de4c67fb4bae5e45f30dbe1c48',
     'name' => 'equipe/ebay',
   ),
   'versions' => 
   array (
+    'dusank/knapsack' => 
+    array (
+      'pretty_version' => '10.0.0',
+      'version' => '10.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cc29a0bbaadbfcb958b98aa4fd69a4ad7d173bba',
+    ),
     'equipe/ebay' => 
     array (
       'pretty_version' => 'dev-main',
@@ -42,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '893b248ef232d0a8ef0dad7598990766d2020cc3',
+      'reference' => '5a298a8bc037d9de4c67fb4bae5e45f30dbe1c48',
     ),
     'firebase/php-jwt' => 
     array (
@@ -53,14 +62,23 @@ private static $installed = array (
       ),
       'reference' => 'f42c9110abe98dd6cfe9053c49bc86acc70b2d23',
     ),
-    'simplon/mysql' => 
+    'simplon/helper' => 
     array (
-      'pretty_version' => '2.1.8',
-      'version' => '2.1.8.0',
+      'pretty_version' => '1.0.8',
+      'version' => '1.0.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a68cef143b811932d981c187bf3473f3b912903f',
+      'reference' => '053e7cdb4dc589ad4a773cb039a9b6830e9bb293',
+    ),
+    'simplon/mysql' => 
+    array (
+      'pretty_version' => '2.2.10',
+      'version' => '2.2.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '21da390cb2b3846a2407a410486b4642501e3098',
     ),
   ),
 );

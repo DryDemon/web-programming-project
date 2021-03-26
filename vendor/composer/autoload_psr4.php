@@ -8,5 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Test\\' => array($vendorDir . '/simplon/mysql/test'),
     'Simplon\\Mysql\\' => array($vendorDir . '/simplon/mysql/src'),
+    'Simplon\\Helper\\' => array($vendorDir . '/simplon/helper/src'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
+    'DusanKasan\\Knapsack\\' => array($vendorDir . '/dusank/knapsack/src'),
 );

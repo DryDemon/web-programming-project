@@ -1,4 +1,6 @@
 <?php
+    require '..\vendor\autoload.php';
+
 
     use \Firebase\JWT\JWT;
 
@@ -51,27 +53,28 @@
 
     function getUserInDBById($id){
 
-        $dbConn = connectToMysql();
-        
-        $result = $dbConn->fetchRow('SELECT id , LastName, Nickname, Email, City, Country, Adress, Password, Name FROM users WHERE id = :id', ['id' => $id]);
+        $dbConn = MyConnection();
 
+        $result = $dbConn->query('SELECT * FROM User WHERE Password = \''.$id.'\'');
+        $row = $result->fetch_assoc();
 
-        return $result;
-
+        return $row;
 
     }
 
     function getUserInDBByEmail($email){
 
-        $dbConn = connectToMysql();
-        
-        $result = $dbConn->fetchRow('SELECT id , LastName, Nickname, Email, City, Country, Adress, Password, Name FROM users WHERE email = :email', ['email' => $email]);
+        $dbConn = MyConnection();
 
+        $result = $dbConn->query('SELECT * FROM User WHERE Email = \''.$email.'\'');
+        $row = $result->fetch_assoc();
 
-        return $result;
+        return $row;
 
 
     }
+
+
 
     function verifyUser($email){
         $dbConn = MyConnection();
