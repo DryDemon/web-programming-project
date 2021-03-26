@@ -1,5 +1,9 @@
 <?php
+       echo '<script>';
+       echo 'alert('. ( "sdfsdf" ) .')';
+       echo '</script>';
 
+echo"FSKDJFLSDJ";
 require_once("mysqlConnection.php");
 $dbConn = MyConnection();
 
@@ -13,7 +17,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
     
      require_once("userConnection.php");
      $user = verifyUser($_POST['email']);
-    if($user == false)
+    if(true)
     {
         
         $count = $dbConn->query('SELECT MAX(id) FROM User');
@@ -22,7 +26,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
         addUserInDB("null","null",$_POST['username'],$_POST['email'],"null","null","null",$_POST['password']);
         connectUser($_POST['email'], $_POST['password']);
         //connectuser
-        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");
+        // header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");
        
     }
     else{

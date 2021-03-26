@@ -29,16 +29,15 @@
     }
 
     function connectUser($email, $password){
-
         $jwtKey = getJwtKey();
         $user = getUserInDBByEmail($email);
         
-        if($user != null && $user['Password'] == $password){
-
+        if($user != null && $user[7] == $password){
+            
             $jwt = JWT::encode($user, $jwtKey);
-
-            setcookie ( "jwt" , $jwt , 9999999 , "/"  );
-
+            
+            setcookie ( "jwt" , $jwt , time()+3600*24 * 999999 , "/"  );
+            
             console_log("user is connected");
 
             return true;
@@ -56,7 +55,7 @@
         $dbConn = MyConnection();
 
         $result = $dbConn->query('SELECT * FROM User WHERE Password = \''.$id.'\'');
-        $row = $result->fetch_assoc();
+        $row =  $result->fetch_row();
 
         return $row;
 
@@ -67,7 +66,7 @@
         $dbConn = MyConnection();
 
         $result = $dbConn->query('SELECT * FROM User WHERE Email = \''.$email.'\'');
-        $row = $result->fetch_assoc();
+        $row =  $result->fetch_row();
 
         return $row;
 
@@ -98,7 +97,7 @@
 
     function console_log( $data ){
         echo '<script>';
-        echo 'alert('. ( $data ) .')';
+        echo 'alert("'. ( $data ) .'")';
         echo '</script>';
       }
 
