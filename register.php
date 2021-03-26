@@ -22,6 +22,9 @@
         <header>
            <form method="post" action="./backend/userRegistering.php">
             <div class="SearchContainer">
+
+
+            
                 <div class="title"><h3>Register yourself here</h3>
                 <hr></div>
                 
