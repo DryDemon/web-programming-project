@@ -1,9 +1,5 @@
 <?php
-       echo '<script>';
-       echo 'alert('. ( "sdfsdf" ) .')';
-       echo '</script>';
 
-echo"FSKDJFLSDJ";
 require_once("mysqlConnection.php");
 $dbConn = MyConnection();
 
