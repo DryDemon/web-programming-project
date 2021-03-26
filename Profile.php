@@ -14,7 +14,7 @@
         <nav class="content">
             <div class="logo">
                 <label class="Status">Status : Buyer/Seller</label>&nbsp;
-                <button class="back" onclick="window.location.href='Shop.html'">Back</button>
+                <button class="back" onclick="window.location.href='Shop.php'">Back</button>
 
                 </div>
             </div>

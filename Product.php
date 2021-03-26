@@ -9,7 +9,7 @@
 
 <body>
     <div class="MainTitle"><h4>FUNMARKET</h4>
-        <button class="back" onclick="window.location.href='Shop.html'" style="color: white;">Back</button>
+        <button class="back" onclick="window.location.href='Shop.php'" style="color: white;">Back</button>
     </div>
     
     <div class="container">

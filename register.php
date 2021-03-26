@@ -14,7 +14,7 @@
                 
                 <div class="NavMenuButtons">
                     
-                    <button role="button" href="Profile.html">Login</button>
+                    <button role="button" href="Profile.php">Login</button>
                 </div>
             </div>
         </nav>

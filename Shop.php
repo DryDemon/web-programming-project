@@ -17,9 +17,9 @@
                 <a class="NavMenuLogo">FunMarket</a>
                 
                 <div class="NavMenuButtons">
-                    <a role="button" href="Product.html">Sell</a>
+                    <a role="button" href="Product.php">Sell</a>
                     <a role="button" href="#">Cart</a>
-                    <a role="button" href="Profile.html">Sign In</a>
+                    <a role="button" href="Profile.php">Sign In</a>
                 </div>
             </div>
         </nav>
