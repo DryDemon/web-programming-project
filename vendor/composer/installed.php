@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'fa13c58eb7142e98dd5a15bb894c8dada0ce81a0',
+    'reference' => '893b248ef232d0a8ef0dad7598990766d2020cc3',
     'name' => 'equipe/ebay',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'fa13c58eb7142e98dd5a15bb894c8dada0ce81a0',
+      'reference' => '893b248ef232d0a8ef0dad7598990766d2020cc3',
     ),
     'firebase/php-jwt' => 
     array (
