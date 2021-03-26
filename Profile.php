@@ -25,9 +25,9 @@
                 <div class="row1">
                     <div class="card">
                         <div class="photo">
-                            <img class="MyPhoto" src="#" width="160" height="160">
+                            <img class="MyPhoto" width="160" height="160"  src="https://www.fabriquedestyles.com/assets/uploads/files/465621_DET01_WEB.JPG">
                             <div class="btncontainer">
-                                <button class="btnPhoto" type="button">Change Photo</button>
+                                <!-- <button class="btnPhoto" type="button">Change Photo</button> -->
                             </div>
                         </div>
                     </div>
