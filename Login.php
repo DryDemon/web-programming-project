@@ -22,7 +22,7 @@
     </nav>
 
     <header>
-    <form method="post" action="./backend/userConnectionHandler.php">
+    <form method="post" action="./userConnectionHandler.php">
         <div class="SearchContainer">
             <div class="title"><h3>Log In</h3>
             <hr></div>

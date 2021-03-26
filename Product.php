@@ -21,7 +21,7 @@
                             <div class="Title">
                                 <h4>Sell Your Items !</h4>
                             </div>
-                            <form method="POST" action="./backend/ProductRegistering.php" class="product">
+                            <form method="POST" action="./ProductRegistering.php" class="product">
                                 <div class="PName">
                                     <div ><input class="small" name="ProductName" type="text" placeholder="Product Name"></div>
                                  </div>

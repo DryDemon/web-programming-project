@@ -1,5 +1,5 @@
 <?php
-    require '..\vendor\autoload.php';
+    require '.\vendor\autoload.php';
 
 
     use \Firebase\JWT\JWT;
@@ -11,27 +11,32 @@
 
     function isUserConnected(){
 
-        //getJwtToken from user cookie
-        $jwt = htmlspecialchars($_COOKIE["jwt"]);
+            if(isset($_COOKIE["jwt"])){
 
-        $jwtKey = getJwtKey();
-        
-        // $jwt = JWT::encode($payload, $jwtKey);
-        $decoded = JWT::decode($jwt, $jwtKey, array('HS256'));
-        $user = getUserInDBById($decoded["id"]);
-
-        if($user != null){
-
-            return true;
+                //getJwtToken from user cookie
+                $jwt = htmlspecialchars($_COOKIE["jwt"]);
+                
+                $jwtKey = getJwtKey();
+                
+                // $jwt = JWT::encode($payload, $jwtKey);
+                $decoded = JWT::decode($jwt, $jwtKey, array('HS256'));
+                $user = getUserInDBById($decoded[0]);
+                
+                
+                if($user != null){
+                    
+                    return true;
+                    
+                }else{
+                    return false;
+                }
+            }
+        return false;
             
-        }else{
-            return false;
         }
         
-    }
-
-    function connectUser($email, $password){
-
+        function connectUser($email, $password){
+            
         // Instantiate an Bcrypt instance.
         $bcrypt = new Bcrypt();
 
@@ -46,24 +51,22 @@
             
             setcookie ( "jwt" , $jwt , time()+3600*24 * 999999 , "/"  );
             
-            console_log("user is connected");
 
             return true;
             
             
         }else{
-            console_log("user error");
             return false;
         }
         
     }
 
     function getUserInDBById($id){
-
         $dbConn = MyConnection();
 
-        $result = $dbConn->query('SELECT * FROM User WHERE Password = \''.$id.'\'');
+        $result = $dbConn->query('SELECT * FROM User WHERE id = \''.$id.'\'');
         $row =  $result->fetch_row();
+        
 
         return $row;
 
@@ -98,7 +101,6 @@
             $test = false;
             return $test;
         }
-        echo 'test';
 
     }
 
@@ -108,7 +110,3 @@
         echo 'alert("'. ( $data ) .'")';
         echo '</script>';
       }
-
-    
-?>
-
