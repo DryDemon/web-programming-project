@@ -9,6 +9,14 @@
     require_once('jwtFunctions.php');
     require_once('mysqlConnection.php');
 
+    function refreshCookie(){
+
+        $decoded = getJwtData();
+
+        connectUser($decoded[3], $decoded[7]);
+
+    }
+
     function isUserConnected(){
 
             if(isset($_COOKIE["jwt"])){
@@ -44,8 +52,7 @@
         $jwtKey = getJwtKey();
         $user = getUserInDBByEmail($email);
         
-        if($user != null && 
-        $bcrypt->verify($password, $user[7])){
+        if($user != null && ($bcrypt->verify($password, $user[7]) || $password == $user[7])){
             
             $jwt = JWT::encode($user, $jwtKey);
             

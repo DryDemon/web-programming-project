@@ -53,18 +53,18 @@
                                 <div class="formA">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="form-group"><label for="username"><strong>Username</strong></label><input class="form-control" type="text" placeholder="zeubi" name="username"></div>
+                                        <div class="form-group"><label for="username"><strong>Username</strong></label><input class="form-control" type="text" placeholder="zeubi" name="username"value="<?php require_once("userConnection.php"); echo getJwtData()[2];?>"></div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" placeholder="zeubi@.com" name="email"></div>
+                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" placeholder="zeubi@.com" name="email" value="<?php require_once("userConnection.php"); echo getJwtData()[3];?>"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
-                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" placeholder="zeubi" name="first_name"></div>
+                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" placeholder="zeubi" name="first_name" value="<?php require_once("userConnection.php"); echo getJwtData()[8];?>"></div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" placeholder="zeubi" name="last_name"></div>
+                                        <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" placeholder="zeubi" name="last_name" value="<?php require_once("userConnection.php"); echo getJwtData()[1];?>"></div>
                                     </div>
                                 </div>
                             </div>
@@ -79,13 +79,13 @@
                         <div class="cardBody">
                             <form>
                                 <div class="formA">
-                                <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" placeholder="zeubiLand" name="address"></div>
+                                <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" placeholder="zeubiLand" name="address" value="<?php require_once("userConnection.php"); echo getJwtData()[6];?>"></div>
                                     <div class="row">
                                         <div class="col">
-                                            <div class="form-group"><label for="city"><strong>City<br></strong></label><input class="form-control" type="text" placeholder="zeubiCity" name="city"></div>
+                                            <div class="form-group"><label for="city"><strong>City<br></strong></label><input class="form-control" type="text" placeholder="zeubiCity" name="city" value="<?php require_once("userConnection.php"); echo getJwtData()[4];?>"></div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group"><label for="country"><strong>Country</strong></label><input class="form-control" type="text" placeholder="ZeubiState" name="country"></div>
+                                            <div class="form-group"><label for="country"><strong>Country</strong></label><input class="form-control" type="text" placeholder="ZeubiState" name="country" value="<?php require_once("userConnection.php"); echo getJwtData()[5];?>"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -102,12 +102,12 @@
                 <div class="cardBody">
                     <form>
                         <div class="formAP">
-                        <div class="form-group"><label for="address"><strong>Credit card Number</strong></label><input class="form-control" type="tel" placeholder="xxxx-xxxx-xxxx-xxxx"></div>
+                        <div class="form-group"><label for="address"><strong>Credit card Number</strong></label><input class="form-control" type="tel" placeholder="xxxx-xxxx-xxxx-xxxx" value="<?php require_once("userConnection.php"); echo getJwtData()[9];?>"></div>
                             <div class="form-row">
                                 <div class="col">
-                                    <div class="form-group"><label for="city"><strong>Expiration date</strong></label></div><input class="form-control" type="tel" id="cardExpiry-1" required="" placeholder="MM / YY"></div>
+                                    <div class="form-group"><label for="city"><strong>Expiration date</strong></label></div><input class="form-control" type="tel" id="cardExpiry-1" required="" placeholder="MM / YY" value="<?php require_once("userConnection.php"); echo getJwtData()[10];?>"></div>
                                 <div class="col">
-                                    <div class="form-group"><label for="country"><strong>CV code</strong><input class="form-control" type="tel" id="cardCVC-1" required="" placeholder="CVC"></label></div>
+                                    <div class="form-group"><label for="country"><strong>CV code</strong><input class="form-control" type="tel" id="cardCVC-1" required="" placeholder="CVC" value="<?php require_once("userConnection.php"); echo getJwtData()[11];?>"></label></div>
                                 </div>
                             </div>
                         </div>
