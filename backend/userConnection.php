@@ -73,11 +73,32 @@
 
     }
 
+    function verifyUser($email){
+        $dbConn = MyConnection();
+
+        $result = $dbConn->query('SELECT * FROM User WHERE Email = \''.$email.'\'');
+        $row = $result->fetch_assoc();
+
+        if($row != null)
+        {
+            $test = true;
+            return $test;
+        }
+        else{
+            $test = false;
+            return $test;
+        }
+        echo 'test';
+
+    }
+
 
     function console_log( $data ){
         echo '<script>';
         echo 'alert('. ( $data ) .')';
         echo '</script>';
       }
+
+    
 ?>
 

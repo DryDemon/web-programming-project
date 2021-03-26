@@ -31,7 +31,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
 }
 else
 {
-echo 'Please, adjust your input before continuing.';
+    echo 'Please, adjust your input before continuing.';
 }
 
 ?>
