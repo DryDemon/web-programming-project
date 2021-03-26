@@ -3,16 +3,29 @@
 require_once("mysqlConnection.php");
 $dbConn = MyConnection();
 
-function addProductInDB($name,$description,$category,$image,$video,$Price){
+function addProductInDB(){
     $dbConn = MyConnection();
-    $Verify = $dbConn->query('INSERT INTO User (Name,Description,Category,Image,Video,Price) VALUES (\''.$_POST["ProductName"].'\',\''.$_POST["ProductDescription"].'\',\''.$_POST["ProductCategory"].'\',\'vide\',\'vide\',\''.$_POST["ProductPrice"].'\')');  
+    $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\''.$_POST["ProductName"].'\',\''.$_POST["ProductDescription"].'\',\''.$_POST["ProductCategory"].'\',\'vide\',\'vide\',\''.$_POST["ProductPrice"].'\')');  
 }
 
-function addTransactionInDB($type,$CreationDate,$Endate){
+function addTransactionInDB(){
     $dbConn = MyConnection();
-    $todaydate = getdate();
+    $todaydate = date("Y-m-d");
     $idproduct = $dbConn->query('SELECT LAST_INSERT_ID()');
-    $Verify = $dbConn->query('INSERT INTO User (Type,CreationDate,EndDate,idproduct) VALUES (\''.$$_POST["ProductType"].'\',\''.$todaydate.'\',\''.$_POST["ProductDeadLine"].'\',\'v'.$idproduct.'\')');  
+    $newdate = date('Y-m-d', strtotime($_POST["ProductDeadLine"]));
+    $Verify = $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct) VALUES (\''.$$_POST["ProductType"].'\',\'2021-01-01\',\''.$newdate.'\',\'1\')');  
+}
+
+if(isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"]) && isset($_POST["ProductDeadLine"]) && isset($_POST["ProductVideo"]))
+{
+  addProductInDB();
+  echo 'step1';
+  addTransactionInDB();
+  echo 'step2';
+}
+else
+{
+ echo 'stepError';
 }
 
 
