@@ -21,7 +21,7 @@
                             <div class="Title">
                                 <h4>Sell Your Items !</h4>
                             </div>
-                            <form class="product">
+                            <form method="POST" action="./backend/ProductRegistering.php" class="product">
                                 <div class="PName">
                                     <div ><input class="small" name="ProductName" type="text" placeholder="Product Name"></div>
                                  </div>
@@ -30,33 +30,34 @@
                                         <datalist id="browsers">
                                           <option value="Computer">
                                           <option value="Phone & SmartPhone">
-                                        </datalist></div>
+                                        </datalist>
+                                    </div>
                                  </div>
                                  <div class="PType" style="margin-left: 5%;">
-                                 <select class="small" name="ProductType" id="Type">
-                                    <option value="">Choose a Type of Selling</option>
-                                    <option value="French">Auction</option>
-                                    <option value="American">Best Offer</option>
-                                    <option value="Canadian">Instant Buy</option>
-                                </select>
+                                 <input class="small" name="ProductType" list="test" placeholder="Choose the type of the selling">
+                                        <datalist id="test">
+                                          <option value="Auction">
+                                          <option value="Best Offer">
+                                          <option value="Instant Buy">
+                                        </datalist>
                                 </div>
                                  <div class="PDescription"><input class="large" name="ProductDescription" type="textarea" placeholder="Product Description" style="height: 200px;"></div>
                                  <div class="PPrice">
                                      <div class="Price" ><input class="small" name="ProductPrice" type="number" placeholder="Product Price ($)"></div>
                                  </div>
-                                 <div class="PEd"><a style="margin-left: 33%;">Select a *DeadLine* if needed</a> <input class="small" type="date" ></div>
+                                 <div class="PEd"><a style="margin-left: 33%;">Select a *DeadLine* if needed</a> <input class="small" name="ProductDeadLine" type="date" ></div>
                                  <div class="PPhoto">
                                     <div class="Photo" >
                                         <a style="margin-left: 33%;">Add some pictures ?</a>
-                                        <input class="small" type="file" ></div>
+                                        <input class="small" name="ProductImage" type="file" ></div>
                                     </div>
                                     <div class="Video" >
                                         <a style="margin-left: 33%;">Or videos ?</a>
-                                        <input class="small" type="file" ></div>
+                                        <input class="small" name="ProductVideo" type="file" ></div>
                                     </div>
                                  <hr>
                                  <div style="margin-left: 45%;">
-                                    <button type="button">Post the Product</button>
+                                    <button type="submit">Post the Product</button>
                                 </div>
                                  <hr>
                             </form>
