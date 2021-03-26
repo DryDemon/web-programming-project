@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '5a298a8bc037d9de4c67fb4bae5e45f30dbe1c48',
+    'reference' => '6b43d776ad6509b85994f1cc771c3e9e2896710a',
     'name' => 'equipe/ebay',
   ),
   'versions' => 
@@ -51,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '5a298a8bc037d9de4c67fb4bae5e45f30dbe1c48',
+      'reference' => '6b43d776ad6509b85994f1cc771c3e9e2896710a',
     ),
     'firebase/php-jwt' => 
     array (
@@ -61,6 +61,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f42c9110abe98dd6cfe9053c49bc86acc70b2d23',
+    ),
+    'polarising/bcrypt' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '247e1ac20f8ef86592f48172c9a3d352be4806fa',
     ),
     'simplon/helper' => 
     array (

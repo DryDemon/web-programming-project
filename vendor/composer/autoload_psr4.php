@@ -11,4 +11,5 @@ return array(
     'Simplon\\Helper\\' => array($vendorDir . '/simplon/helper/src'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     'DusanKasan\\Knapsack\\' => array($vendorDir . '/dusank/knapsack/src'),
+    'Bcrypt\\' => array($vendorDir . '/polarising/bcrypt/src'),
 );

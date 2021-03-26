@@ -1,7 +1,15 @@
 <?php
+require '..\vendor\autoload.php';
+
 
 require_once("mysqlConnection.php");
 $dbConn = MyConnection();
+
+use Bcrypt\Bcrypt;
+
+// Instantiate an Bcrypt instance.
+$bcrypt = new Bcrypt();
+
 
 function addUserInDB($lastname,$name,$nickname,$email,$city,$country,$adress,$password){
     $dbConn = MyConnection();
@@ -19,7 +27,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
         $count = $dbConn->query('SELECT MAX(id) FROM User');
         $count++;
         $nick = $_POST['username'];
-        addUserInDB("null","null",$_POST['username'],$_POST['email'],"null","null","null",$_POST['password']);
+        addUserInDB("null","null",$_POST['username'],$_POST['email'],"null","null","null",$bcrypt->encrypt($_POST['password'],'2a'));
         connectUser($_POST['email'], $_POST['password']);
         //connectuser
         header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");

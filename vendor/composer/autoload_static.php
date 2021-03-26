@@ -29,6 +29,10 @@ class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
         array (
             'DusanKasan\\Knapsack\\' => 20,
         ),
+        'B' => 
+        array (
+            'Bcrypt\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -51,6 +55,10 @@ class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
         'DusanKasan\\Knapsack\\' => 
         array (
             0 => __DIR__ . '/..' . '/dusank/knapsack/src',
+        ),
+        'Bcrypt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/polarising/bcrypt/src',
         ),
     );
 

@@ -3,7 +3,9 @@
 
 
     use \Firebase\JWT\JWT;
+    use Bcrypt\Bcrypt;
 
+    
     require_once('jwtFunctions.php');
     require_once('mysqlConnection.php');
 
@@ -29,10 +31,16 @@
     }
 
     function connectUser($email, $password){
+
+        // Instantiate an Bcrypt instance.
+        $bcrypt = new Bcrypt();
+
+
         $jwtKey = getJwtKey();
         $user = getUserInDBByEmail($email);
         
-        if($user != null && $user[7] == $password){
+        if($user != null && 
+        $bcrypt->verify($password, $user[7])){
             
             $jwt = JWT::encode($user, $jwtKey);
             
