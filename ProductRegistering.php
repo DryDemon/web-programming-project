@@ -9,18 +9,32 @@ function addProductInDB(){
 }
 
 function addTransactionInDB(){
-    $dbConn = MyConnection();
-    $todaydate = date("Y-m-d");
-    $idproduct = $dbConn->query('SELECT LAST_INSERT_ID()');
+  $dbConn = MyConnection();
+   $result = $dbConn->query('SELECT COUNT(*) FROM Product;');
+   $row = $result->fetch_array(MYSQLI_NUM);
+   echo '<br> count : '.$row[0].'<br>';
+   $todaydate = date('Y-m-d');
     $newdate = date('Y-m-d', strtotime($_POST["ProductDeadLine"]));
-    $Verify = $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct) VALUES (\''.$$_POST["ProductType"].'\',\'2021-01-01\',\''.$newdate.'\',\'1\')');  
+    $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct) VALUES (\''.$_POST["ProductType"].'\',\''.$todaydate.'\',\''.$newdate.'\',\''.$row[0].'\')');  
 }
 
-if(isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"]) && isset($_POST["ProductDeadLine"]) && isset($_POST["ProductVideo"]))
+function sqlLog()
+{
+  $dbConn = MyConnection();
+  if($dbConn->connect_error)
+  {
+    die('Connect Error : ' . $dbConn->connect_error);
+  }
+
+}
+
+if(isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"]) && isset($_POST["ProductVideo"]))
 {
   addProductInDB();
+  sqlLog();
   echo 'step1';
   addTransactionInDB();
+  sqlLog();
   echo 'step2';
 }
 else

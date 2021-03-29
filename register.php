@@ -20,7 +20,7 @@
         </nav>
 
         <header>
-           <form method="post" action=".istering.php">
+           <form method="post" action="userRegistering.php">
             <div class="SearchContainer">
 
 

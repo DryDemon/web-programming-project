@@ -30,7 +30,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
         addUserInDB("null","null",$_POST['username'],$_POST['email'],"null","null","null",$bcrypt->encrypt($_POST['password'],'2a'));
         connectUser($_POST['email'], $_POST['password']);
         //connectuser
-        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");
+        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/Shop.php");
        
     }
     else{
