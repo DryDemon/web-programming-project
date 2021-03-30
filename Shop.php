@@ -55,8 +55,7 @@ if (isUserConnected()) {
             <div class="SearchBarButton">
                 <form method="post" action="./Shop.php">
                     <div class="Form">
-                        <input class="form-input" type="text" name="search" placeholder="iPhone X..." >;
-?>>
+                        <input class="form-input" type="text" name="search" placeholder="iPhoneX..." <?php if (isset($_POST['search'])) {echo 'value="' . $_POST["search"] . '"';}?>/>
                         <button class="forme-button" type="submit">Search</button>
                     </div>
                 </form>
@@ -103,18 +102,26 @@ $categories = ["Auction"
 foreach ($categories as $currentCategory) {
 
     foreach ($productRows as $row) {
-        $name = $row["Name"];
-        $description = $row["Description"];
-        $category = $row["Category"];
-        $image = $row["Image"];
-        $video = $row["Video"];
-        $price = $row["Price"];
+        foreach ($transactionRows as $transaction) {
 
-        // if ($currentCategory == $category) {
-        echo $currentCategory ;echo $category;
-        if (true) { //TODO
+            if ($transaction["idproduct"] == $row["id"]) {
 
-            include "template/shopProduct.php";
+                $name = $row["Name"];
+                $description = $row["Description"];
+                $category = $row["Category"];
+                $image = $row["Image"];
+                $video = $row["Video"];
+                $price = $row["Price"];
+                $creationDate = $transaction["CreationDate"];
+                $endDate = $transaction["EndDate"];
+                $idSeller = $transaction["idSeller"];
+                $type = $transaction["Type"];
+
+                if ($currentCategory == $type) {
+
+                    include "template/shopProduct.php";
+                }
+            }
         }
     }
 }
