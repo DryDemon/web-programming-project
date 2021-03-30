@@ -11,6 +11,14 @@ function getAllProductInDBByDate(){
     // $row = $result->fetch_array(MYSQLI_NUM);
 }
 
+function getAllTransactionsInDBByDate(){
+    $dbConn = MyConnection();
+    $result = $dbConn->query('SELECT * from Transaction');  
+    return $result;
+
+    // $row = $result->fetch_array(MYSQLI_NUM);
+}
+
 
 
 

@@ -55,9 +55,10 @@
                 <h1>Any specifics ideas ?</h1>
             </div>
             <div class="SearchBarButton">
-                <form>
+                <form method="post" action="./Shop.php">
                     <div class="Form">
-                        <input class="form-input" type="text" placeholder="iPhoneX...">
+                        <input class="form-input" type="text" name="search" placeholder="iPhoneX..." <?php  if(isset($_POST['search'])){ echo 'value="'.$_POST["search"].'"';}
+?>>
                         <button class="forme-button" type="submit">Search</button>
                     </div>
                 </form>
@@ -75,6 +76,31 @@
 
                     $result = getAllProductInDBByDate();
                     while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $productRows[] = $row;
+                    }
+
+                    
+                    $result = getAllTransactionsInDBByDate();
+                    while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $transactionRows[] = $row;
+                    }
+
+                    function isInSearch($row){
+                        $name =$row[1];
+                        if(isset($_POST['search'])){
+                            $search = $_POST['search'];
+                            if($search != ""){
+                                return strpos(strtolower($name), strtolower($search)) !== false;
+                            }
+                        }
+                        return true;
+                    }
+
+                    $productRows = (array_filter($productRows, "isInSearch"));
+
+                    foreach($productRows as $row)
+                    {
+                        //filter
                         $name=$row["Name"];
                         $description=$row["Description"];
                         $category=$row["Category"];

@@ -17,7 +17,7 @@
                 <label class="type">Auction</label> <strong> End <span style="text-decoration: underline;"></span><label class="finalDate">02/15/2021</label></span></strong>
             </div>
         </div>
-        <div class="row">
+        <div class="row">   
             <p class="description">
                 <?php echo $description ?>
             </p>
