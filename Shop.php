@@ -20,7 +20,7 @@
             <div class="NavMenuButtons">
                 <a role="button" href="Product.php">Sell</a>
                 <a role="button" href="#">Cart</a>
-                <?php
+<?php
 
 require_once "userConnection.php";
 
@@ -55,7 +55,7 @@ if (isUserConnected()) {
             <div class="SearchBarButton">
                 <form method="post" action="./Shop.php">
                     <div class="Form">
-                        <input class="form-input" type="text" name="search" placeholder="iPhoneX..." <?php if (isset($_POST['search'])) {echo 'value="' . $_POST["search"] . '"';}
+                        <input class="form-input" type="text" name="search" placeholder="iPhone X..." >;
 ?>>
                         <button class="forme-button" type="submit">Search</button>
                     </div>

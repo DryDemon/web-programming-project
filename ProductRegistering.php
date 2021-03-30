@@ -5,17 +5,18 @@ $dbConn = MyConnection();
 
 function addProductInDB(){
     $dbConn = MyConnection();
-    $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\''.$_POST["ProductName"].'\',\''.$_POST["ProductDescription"].'\',\''.$_POST["ProductCategory"].'\',\'vide\',\'vide\',\''.$_POST["ProductPrice"].'\')');  
+    $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\''.$_POST["ProductName"].'\',\''.$_POST["ProductDescription"].'\',\''.$_POST["ProductCategory"].'\',\'vide\',\'vide\','.$_POST["ProductPrice"].')');  
 }
 
 function addTransactionInDB(){
   $dbConn = MyConnection();
    $result = $dbConn->query('SELECT COUNT(*) FROM Product;');
    $row = $result->fetch_array(MYSQLI_NUM);
-   echo '<br> count : '.$row[0].'<br>';
    $todaydate = date('Y-m-d');
     $newdate = date('Y-m-d', strtotime($_POST["ProductDeadLine"]));
-    $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct) VALUES (\''.$_POST["ProductType"].'\',\''.$todaydate.'\',\''.$newdate.'\',\''.$row[0].'\')');  
+    require_once("userConnection.php");
+    $utilisateur = getCurrentUserData();
+    $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct,idSeller) VALUES (\''.$_POST["ProductType"].'\',\''.$todaydate.'\',\''.$newdate.'\',\''.$row[0].'\','. $utilisateur[0].')');  
 }
 
 function sqlLog()
@@ -28,7 +29,7 @@ function sqlLog()
 
 }
 
-if(isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"]) && isset($_POST["ProductVideo"]))
+if(isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"]) )
 {
   addProductInDB();
   sqlLog();

@@ -419,12 +419,12 @@ class NamesStore extends CrudStore
     }
 
     /**
-     * @param ReadQueryBuilder|null $builder
+     * @param ReadQueryBuilder $builder
      *
      * @return NameModel[]|null
      * @throws MysqlException
      */
-    public function read(?ReadQueryBuilder $builder = null): ?array
+    public function read(ReadQueryBuilder $builder): ?array
     {
         /** @var NameModel[]|null $response */
         $response = $this->crudRead($builder);
@@ -601,16 +601,6 @@ Returns a `name model` or `NULL` if nothing could be matched.
 ```php
 $model = $store->readOne(
     (new ReadQueryBuilder())->addCondition(NameModel::COLUMN_NAME, 'Peter')
-);
-
-echo $model->getId(); // prints user id
-```
-
-You can make use of operators from the `addCondition`:
-
-```php
-$model = $store->readOne(
-    (new ReadQueryBuilder())->addCondition(NameModel::COLUMN_AGE, 20, '>')
 );
 
 echo $model->getId(); // prints user id

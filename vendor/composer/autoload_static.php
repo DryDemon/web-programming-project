@@ -6,11 +6,6 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
 {
-    public static $files = array (
-        '5d9c5be1aa1fbc12016e2c5bd16bbc70' => __DIR__ . '/..' . '/dusank/knapsack/src/collection_functions.php',
-        'e5fde315a98ded36f9b25eb160f6c9fc' => __DIR__ . '/..' . '/dusank/knapsack/src/utility_functions.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
@@ -19,15 +14,10 @@ class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
         'S' => 
         array (
             'Simplon\\Mysql\\' => 14,
-            'Simplon\\Helper\\' => 15,
         ),
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
-        ),
-        'D' => 
-        array (
-            'DusanKasan\\Knapsack\\' => 20,
         ),
         'B' => 
         array (
@@ -44,17 +34,9 @@ class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
         array (
             0 => __DIR__ . '/..' . '/simplon/mysql/src',
         ),
-        'Simplon\\Helper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/simplon/helper/src',
-        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
-        'DusanKasan\\Knapsack\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dusank/knapsack/src',
         ),
         'Bcrypt\\' => 
         array (

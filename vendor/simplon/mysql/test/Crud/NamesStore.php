@@ -2,6 +2,7 @@
 
 namespace Test\Crud;
 
+use Simplon\Mysql\Crud\CrudModelInterface;
 use Simplon\Mysql\Crud\CrudStore;
 use Simplon\Mysql\MysqlException;
 use Simplon\Mysql\QueryBuilder\CreateQueryBuilder;
@@ -23,9 +24,9 @@ class NamesStore extends CrudStore
     }
 
     /**
-     * @return NameModel
+     * @return CrudModelInterface
      */
-    public function getModel(): NameModel
+    public function getModel(): CrudModelInterface
     {
         return new NameModel();
     }
@@ -45,12 +46,12 @@ class NamesStore extends CrudStore
     }
 
     /**
-     * @param ReadQueryBuilder|null $builder
+     * @param ReadQueryBuilder $builder
      *
      * @return NameModel[]|null
      * @throws MysqlException
      */
-    public function read(?ReadQueryBuilder $builder = null): ?array
+    public function read(ReadQueryBuilder $builder): ?array
     {
         /** @var NameModel[]|null $response */
         $response = $this->crudRead($builder);
