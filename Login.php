@@ -38,7 +38,7 @@
           </div>
 
           <div class="registerB">
-            <button type="submit" class="forme-button">Sign Up</button>
+            <button type="submit" class="forme-button">Sign In</button>
     
        </form>
     </header>
