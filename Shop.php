@@ -24,7 +24,7 @@
 
                 require_once("userConnection.php");
 
-                
+
                 if (isUserConnected()) {
                     echo '<a role="button" href="Profile.php">Profile</a>';
                 } else {
@@ -69,96 +69,23 @@
         <div class="Container">
             <div class="product-list">
                 <div class="ProductContainer">
-                    <fieldset id="Auction">
-                        <legend><strong>Auction</strong></legend>
-                        <div class="DisplayProduct">
-                            <div class="row">
-                                <a class="ProductImage"><img src="iphone6.jpg"></a>
-                            </div>
-                            <div class="row">
-                                <div class="NameProduct">
-                                    <h2><label>iPhone 6s</label></h2>
-                                </div>
-                                <div class="TypeOfSelling">
-                                    <label class="type">Auction</label> <strong> End <span style="text-decoration: underline;"></span><label class="finalDate">02/15/2021</label></span></strong>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p class="description">
-                                    blabla
-                                </p>
-                            </div>
-                            <div class="row">
-                                <form>
-                                    <div class="BidButton">
-                                        <button class="Display-button" type="submit">Bid !</button>
-                                    </div>
-                                </form>
-                                <div class="MinimumBid">
-                                    <label class="MiniBid">Minimum $500</label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset id="BestOffer">
-                        <legend><strong>Best Offer</strong></legend>
-                        <div class="DisplayProduct">
-                            <div class="row">
-                                <a class="ProductImage"><img src="iphone6.jpg"><img src="iphone6.jpg"></a>
-                            </div>
-                            <div class="row">
-                                <div class="NameProduct">
-                                    <h2><label>iPhone 7</label></h2>
-                                </div>
-                                <div class="TypeOfSelling">
-                                    <label class="type">Best Offer</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p class="description">
-                                    blabla
-                                </p>
-                            </div>
-                            <div class="row">
-                                <form>
-                                    <div class="BidButton">
-                                        <button class="Display-button" type="submit">Offer !</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset id="InstantBuy">
-                        <legend><strong>Instant Buying</strong></legend>
-                        <div class="DisplayProduct">
-                            <div class="row">
-                                <a class="ProductImage"><img src="iphone6.jpg"><img src="iphone6.jpg"><img src="iphone6.jpg"></a>
-                            </div>
-                            <div class="row">
-                                <div class="NameProduct">
-                                    <h2><label>iPhone X</label></h2>
-                                </div>
-                                <div class="TypeOfSelling">
-                                    <label class="type">Instant Buy</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p class="description">
-                                    blabla
-                                </p>
-                            </div>
-                            <div class="row">
-                                <form>
-                                    <div class="BidButton">
-                                        <button class="Display-button" type="submit">Buy now !</button>
-                                    </div>
-                                </form>
-                                <div class="MinimumBid">
-                                    <label class="MiniBid">$1200</label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
+                    <?php
+
+                    require_once("getSql.php");
+
+                    $result = getAllProductInDBByDate();
+                    while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $name=$row["Name"];
+                        $description=$row["Description"];
+                        $category=$row["Category"];
+                        $image=$row["Image"];
+                        $video=$row["Video"];
+                        $price=$row["Price"];
+
+                        include("template/shopProduct.php");
+                    }
+
+                    ?>
                 </div>
             </div>
         </div>
