@@ -83,6 +83,11 @@ function connectUser($email, $password)
 
 }
 
+function logoutUser(){
+    setcookie('jwt', null, -1, '/'); 
+    return true;
+}
+
 function getUserInDBById($id)
 {
     $dbConn = MyConnection();
