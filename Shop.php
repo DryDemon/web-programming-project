@@ -18,15 +18,16 @@
             <a class="NavMenuLogo">FunMarket</a>
 
             <div class="NavMenuButtons">
-                <a role="button" href="Product.php">Sell</a>
+                
                 
 <?php
 
 require_once "userConnection.php";
 
 if (isUserConnected()) {
-    echo '<a role="button" href="Profile.php">Profile</a>';
-    echo '<a role="button" style="margin-left:0.25rem" href="#">Disconnect</a>';//user disconnect itself
+    echo '<a role="button" href="Product.php">Sell</a>';
+    echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
+    echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>';//user disconnect itself
 } else {
     echo '<a role="button" href="Login.php">Sign In</a>';
 }
