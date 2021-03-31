@@ -1,3 +1,5 @@
+
+    <script type="text/javascript" src="ShopPrompt.js"></script>
 <fieldset id="<?php echo str_replace(' ', '', $type); ?>">
     <legend><strong><?php echo $type; ?></strong></legend>
     <div class="DisplayProduct">
@@ -33,7 +35,7 @@
         <div class="row">
             <form>
                 <div class="BidButton">
-                    <button class="Display-button" type="submit">
+                    <button id="Open" onclick="OpenDialog()" class="Display-button">
                     <?php
 switch ($type) {
     case "Auction":
@@ -65,4 +67,11 @@ switch ($type) {
             </div>
         </div>
     </div>
+<dialog id="dialog">
+    <form method="POST">
+            <label>Enter an Offer :</label><br>
+            <input type="number" name="price" class="form-input">
+            <button id="Close" name="Display-button">Close</button>
+    </form>
+</dialog>
 </fieldset>
