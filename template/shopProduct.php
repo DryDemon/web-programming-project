@@ -35,7 +35,7 @@
         <div class="row">
             <form>
                 <div class="BidButton">
-                    <button id="Open" onclick="OpenDialog()" class="Display-button">
+                    <a id="Open" onclick="OpenDialog()" class="DisplayA">
                     <?php
 switch ($type) {
     case "Auction":
@@ -50,7 +50,7 @@ switch ($type) {
         break;
 
 }?>
-                    </button>
+                    </a>
                 </div>
             </form>
             <div class="MinimumBid">
@@ -70,8 +70,9 @@ switch ($type) {
 <dialog id="dialog">
     <form method="POST">
             <label>Enter an Offer :</label><br>
-            <input type="number" name="price" class="form-input">
-            <button id="Close" name="Display-button">Close</button>
+            <input type="number" name="price" min=0 class="form-input">
+            <button name="sendOffer" type="submit">Offer</button>
+            <a id="Close" onclick="CloseDialog()" name="DisplayB">Close</a>
     </form>
 </dialog>
 </fieldset>
