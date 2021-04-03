@@ -18,21 +18,21 @@
             <a class="NavMenuLogo">FunMarket</a>
 
             <div class="NavMenuButtons">
-                
-                
-<?php
 
-require_once "userConnection.php";
 
-if (isUserConnected()) {
-    echo '<a role="button" href="Product.php">Sell</a>';
-    echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
-    echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>';//user disconnect itself
-} else {
-    echo '<a role="button" href="Login.php">Sign In</a>';
-}
+                <?php
 
-?>
+                require_once "userConnection.php";
+
+                if (isUserConnected()) {
+                    echo '<a role="button" href="Product.php">Sell</a>';
+                    echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
+                    echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
+                } else {
+                    echo '<a role="button" href="Login.php">Sign In</a>';
+                }
+
+                ?>
 
             </div>
         </div>
@@ -57,7 +57,9 @@ if (isUserConnected()) {
             <div class="SearchBarButton">
                 <form method="post" action="./Shop.php">
                     <div class="Form">
-                        <input class="form-input" type="text" name="search" placeholder="iPhoneX..." <?php if (isset($_POST['search'])) {echo 'value="' . $_POST["search"] . '"';}?>/>
+                        <input class="form-input" type="text" name="search" placeholder="iPhoneX..." <?php if (isset($_POST['search'])) {
+                                                                                                            echo 'value="' . $_POST["search"] . '"';
+                                                                                                        } ?> />
                         <button class="forme-button" type="submit">Search</button>
                     </div>
                 </form>
@@ -71,64 +73,67 @@ if (isUserConnected()) {
                 <div class="ProductContainer">
                     <?php
 
-require_once "getSql.php";
+                    require_once "getSql.php";
 
-$result = getAllProductInDBByDate();
-while ($row = $result->fetch_array(MYSQLI_BOTH)) {
-    $productRows[] = $row;
-}
+                    $result = getAllProductInDBByDate();
+                    while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $productRows[] = $row;
+                    }
 
-$result = getAllTransactionsInDBByDate();
-while ($row = $result->fetch_array(MYSQLI_BOTH)) {
-    $transactionRows[] = $row;
-}
+                    $result = getAllTransactionsInDBByDate();
+                    while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $transactionRows[] = $row;
+                    }
 
-function isInSearch($row)
-{
-    $name = $row[1];
-    if (isset($_POST['search'])) {
-        $search = $_POST['search'];
-        if ($search != "") {
-            return strpos(strtolower($name), strtolower($search)) !== false;
-        }
-    }
-    return true;
-}
+                    function isInSearch($row)
+                    {
+                        $name = $row[1];
+                        if (isset($_POST['search'])) {
+                            $search = $_POST['search'];
+                            if ($search != "") {
+                                return strpos(strtolower($name), strtolower($search)) !== false;
+                            }
+                        }
+                        return true;
+                    }
 
-$productRows = (array_filter($productRows, "isInSearch"));
+                    $productRows = (array_filter($productRows, "isInSearch"));
+                    $negociationRows = (array_filter($productRows, "isInSearch"));
 
-$categories = ["Auction"
-    , "Best Offer"
-    , "Instant Buy"];
+                    $categories = [
+                        "Auction", "Best Offer", "Instant Buy"
+                    ];
 
-foreach ($categories as $currentCategory) {
+                    foreach ($categories as $currentCategory) {
 
-    foreach ($productRows as $row) {
-        foreach ($transactionRows as $transaction) {
+                        foreach ($productRows as $row) {
+                            foreach ($transactionRows as $transaction) {
 
-            if ($transaction["idproduct"] == $row["id"]) {
+                                if ($transaction["idproduct"] == $row["id"]) {
 
-                $name = $row["Name"];
-                $description = $row["Description"];
-                $category = $row["Category"];
-                $image = $row["Image"];
-                $video = $row["Video"];
-                $price = $row["Price"];
-                $creationDate = $transaction["CreationDate"];
-                $endDate = $transaction["EndDate"];
-                $idSeller = $transaction["idSeller"];
-                $type = $transaction["Type"];
+                                    $name = $row["Name"];
+                                    $description = $row["Description"];
+                                    $category = $row["Category"];
+                                    $image = $row["Image"];
+                                    $video = $row["Video"];
+                                    $price = $row["Price"];
+                                    $creationDate = $transaction["CreationDate"];
+                                    $endDate = $transaction["EndDate"];
+                                    $idSeller = $transaction["idSeller"];
+                                    $productId = $row["id"];
+                                    $type = $transaction["Type"];
 
-                if ($currentCategory == $type) {
 
-                    include "template/shopProduct.php";
-                }
-            }
-        }
-    }
-}
+                                    if ($currentCategory == $type) {
 
-?>
+                                        include "template/shopProduct.php";
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ?>
                 </div>
             </div>
         </div>

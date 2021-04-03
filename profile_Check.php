@@ -21,7 +21,9 @@ $dbConn = MyConnection();
 
     function getIdSeller($idproduct)
     {
-        $resultId = $dbConn->query('SELECT idSeller FROM Transaction WHERE idproduct = '.$idproduct.);
+        require_once("mysqlConnection.php");
+        $dbConn = MyConnection();
+        $resultId = $dbConn->query('SELECT idSeller FROM Transaction WHERE idproduct = '.$idproduct);
         return $resultId;
     }
 
@@ -29,9 +31,11 @@ $dbConn = MyConnection();
     {
         require_once "userConnection.php";
         $iduser = getCurrentUserData();
-        $idproduct;
+        $idproduct = $_POST['productId'];
         $idseller =  getIdSeller($idproduct);
-        $currentOffer;
+        $currentOffer = $_POST['price'];
         $Offer = $_POST['Offer'];
+
+        $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer) VALUES ('.$iduser.','.$idseller.',\'On going\','.$Offer.','.$currentOffer.')');
     }
 ?>
