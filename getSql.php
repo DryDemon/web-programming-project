@@ -20,6 +20,13 @@ function getAllTransactionsInDBByDate(){
 }
 
 
+function getUserHistory($userId){
+    $dbConn = MyConnection();
+    $result = $dbConn->query('SELECT * from Negociation WHERE ');  
+
+    return $result;
+
+}
 
 
 ?>

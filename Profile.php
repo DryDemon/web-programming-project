@@ -36,6 +36,7 @@
                     <div class="historyHeader">
                         <h6>History</h6>
                         <ul>
+                            
                             <li>Iphone X <strong>SOLD xx/xx/xxxx $555.00</strong></li>
                             <li>Ipad Air <strong>BOUGHT xx/xx/xxxx $600.00</strong></li>
                             <li>Ipod Nano&nbsp;<strong>BOUGHT xx/xx/xxxx $490.00</strong><br></li>
@@ -50,7 +51,7 @@
                         <h6>User Information</h6>
                     </div>
                     <div class="cardBody">
-                            <form method="post" action="./profile_updateUserDetails.php">
+                        <form method="post" action="./profile_updateUserDetails.php">
                             <div class="formA">
                                 <div class="row">
                                     <div class="col">
@@ -83,7 +84,7 @@
                         <h6>Contact Settings</h6>
                     </div>
                     <div class="cardBody">
-                            <form method="post" action="./profile_updateUserDetails.php">
+                        <form method="post" action="./profile_updateUserDetails.php">
                             <input type="hidden" name="type" value="1" />
                             <div class="formA">
                                 <div class="form-group"><label for="address"><strong>Adress</strong></label><input class="form-control" type="text" placeholder="zeubiLand" name="adress" value="<?php require_once("userConnection.php");
@@ -110,19 +111,19 @@
                 <h6><br>Payment details</h6>
             </div>
             <div class="cardBody">
-                    <form method="post" action="./profile_updateUserDetails.php">
+                <form method="post" action="./profile_updateUserDetails.php">
                     <input type="hidden" name="type" value="2" />
                     <div class="formAP">
                         <div class="form-group"><label for="address"><strong>Credit card Number</strong></label><input class="form-control" name="ccn" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" value="<?php require_once("userConnection.php");
-                                                                                                                                                                                                echo getJwtData()[9]; ?>"></div>
+                                                                                                                                                                                                            echo getJwtData()[9]; ?>"></div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group"><label for="city"><strong>Expiration date</strong></label></div><input class="form-control" name="exd" type="text" id="cardExpiry-1" required="" placeholder="MM / YY" value="<?php require_once("userConnection.php");
-                                                                                                                                                                                                                            echo getJwtData()[10]; ?>">
+                                                                                                                                                                                                                                        echo getJwtData()[10]; ?>">
                             </div>
                             <div class="col">
                                 <div class="form-group"><label for="country"><strong>CV code</strong><input class="form-control" name="cvc" type="text" id="cardCVC-1" required="" placeholder="CVC" value="<?php require_once("userConnection.php");
-                                                                                                                                                                                                echo getJwtData()[11]; ?>"></label></div>
+                                                                                                                                                                                                            echo getJwtData()[11]; ?>"></label></div>
                             </div>
                         </div>
                     </div>
