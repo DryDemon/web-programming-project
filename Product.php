@@ -49,7 +49,7 @@
                                  <div class="PPhoto">
                                     <div class="Photo" >
                                         <a style="margin-left: 33%;">Add some pictures ?</a>
-                                        <input class="small" name="ProductImage" type="url" ></div>
+                                        <input class="small" placeholder="http://google.com/image.png" name="ProductImage" type="url" ></div>
                                     </div>
                                     <!-- <div class="Video" >
                                         <a style="margin-left: 33%;">Or videos ?</a>
