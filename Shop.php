@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Shop - FunMarket</title>
     <link rel="stylesheet" href="Style.css">
+    <script type="text/javascript" src="ShopPrompt.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
@@ -26,9 +27,9 @@
                 $utilisateur = getCurrentUserData();
 
                 if (isUserConnected()) {
-                    if($utilisateur[3]=="Admin@Admin.com")
+                    if($utilisateur[3]=="Admin@admin.com")
                     {
-                        echo '<a role="button" href="#">User List</a>';
+                        echo '<a role="button" onclick="AdminPrompt()">User List</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
                     }
@@ -153,11 +154,33 @@
             </div>
         </div>
     </section>
+        
     <footer>
         <div class="container">
             <a href="#">About</a> <a href="#">Contact</a>
         </div>
     </footer>
+    <dialog id="userlist">
+        <label>Select the user you want to remove.</label><br>
+                <form method="POST" action="adminUserRemove.php">
+                <button type="submit">Remove</button>
+                                        <select name="userSelected">
+                                                <option value="">--Select a User--</option>
+                                                    <?php
+                                                    require_once("mysqlConnection.php");
+                                                    $dbConn = MyConnection();
+                                                    $userResult = $dbConn->query('SELECT Email FROM User WHERE Email != \'Admin@admin.com\';');
+                                                    
+                                                    while($row = $userResult->fetch_row())
+                                                    {
+                                                        echo '<option value="'.$row[0].'">'.$row[0].'</option>';
+                                                    }
+                                                    $dbConn.close();
+                                                ?>
+                                        </select>
+                                        
+                </form>
+        </dialog>
 </body>
 
 </html>

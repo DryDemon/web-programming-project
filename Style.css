@@ -72,7 +72,7 @@ line-height: 1.5;
     padding-left: 16%;
 }
 
-.NavMenuButtons a, form a{
+.NavMenuButtons a, form a, form button{
    
     display: inline-block;
     color: #fff;

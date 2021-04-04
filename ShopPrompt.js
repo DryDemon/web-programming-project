@@ -15,3 +15,9 @@ function CloseDialog() {
     dialog.close();
 
 }
+
+function AdminPrompt()
+{
+    dialog = document.getElementById('userlist');
+        dialog.showModal();
+}
