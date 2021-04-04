@@ -6,7 +6,7 @@ $dbConn = MyConnection();
 function addProductInDB()
 {
   $dbConn = MyConnection();
-  $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\'vide\',\'vide\',' . $_POST["ProductPrice"] . ')');
+  $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\''.$_POST["ProductImage"].'\',\'vide\',' . $_POST["ProductPrice"] . ')');
 }
 
 function addTransactionInDB()

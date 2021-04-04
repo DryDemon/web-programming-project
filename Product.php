@@ -49,12 +49,12 @@
                                  <div class="PPhoto">
                                     <div class="Photo" >
                                         <a style="margin-left: 33%;">Add some pictures ?</a>
-                                        <input class="small" name="ProductImage" type="file" ></div>
+                                        <input class="small" name="ProductImage" type="url" ></div>
                                     </div>
-                                    <div class="Video" >
+                                    <!-- <div class="Video" >
                                         <a style="margin-left: 33%;">Or videos ?</a>
                                         <input class="small" name="ProductVideo" type="file" ></div>
-                                    </div>
+                                    </div> -->
                                  <hr>
                                  <div style="margin-left: 45%;">
                                     <button type="submit">Post the Product</button>
