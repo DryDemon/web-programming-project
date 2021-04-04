@@ -104,29 +104,32 @@
                         "Auction", "Best Offer", "Instant Buy"
                     ];
 
-                    foreach ($categories as $currentCategory) {
+                    if ($productRows != null && $transactionRows != null) {
 
-                        foreach ($productRows as $row) {
-                            foreach ($transactionRows as $transaction) {
+                        foreach ($categories as $currentCategory) {
 
-                                if ($transaction["idproduct"] == $row["id"]) {
+                            foreach ($productRows as $row) {
+                                foreach ($transactionRows as $transaction) {
 
-                                    $name = $row["Name"];
-                                    $description = $row["Description"];
-                                    $category = $row["Category"];
-                                    $image = $row["Image"];
-                                    $video = $row["Video"];
-                                    $price = $row["Price"];
-                                    $creationDate = $transaction["CreationDate"];
-                                    $endDate = $transaction["EndDate"];
-                                    $idSeller = $transaction["idSeller"];
-                                    $productId = $row["id"];
-                                    $type = $transaction["Type"];
+                                    if ($transaction["idproduct"] == $row["id"]) {
+
+                                        $name = $row["Name"];
+                                        $description = $row["Description"];
+                                        $category = $row["Category"];
+                                        $image = $row["Image"];
+                                        $video = $row["Video"];
+                                        $price = $row["Price"];
+                                        $creationDate = $transaction["CreationDate"];
+                                        $endDate = $transaction["EndDate"];
+                                        $idSeller = $transaction["idSeller"];
+                                        $productId = $row["id"];
+                                        $type = $transaction["Type"];
 
 
-                                    if ($currentCategory == $type) {
+                                        if ($currentCategory == $type) {
 
-                                        include "template/shopProduct.php";
+                                            include "template/shopProduct.php";
+                                        }
                                     }
                                 }
                             }
