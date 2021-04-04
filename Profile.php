@@ -63,9 +63,9 @@
                                         if ($negociation["idProduct"] == $product["id"]) {
                                             $name = $product["Name"];
                                             $price = $product["Price"];
-                                            echo $negociation;
-                                            $buying = 1;
-                                            include "template/shopProduct.php";
+                                            $buying = $negociation["idUser"] == $userId;
+                                            
+                                            include "template/userProfileHistory.php";
                                         }
                                     }
                                 }
