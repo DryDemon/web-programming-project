@@ -23,12 +23,24 @@
                 <?php
 
                 require_once "userConnection.php";
+                $utilisateur = getCurrentUserData();
 
                 if (isUserConnected()) {
-                    echo '<a role="button" href="Product.php">Sell</a>';
-                    echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
-                    echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
-                } else {
+                    if($utilisateur[3]=="Admin@Admin.com")
+                    {
+                        echo '<a role="button" href="#">User List</a>';
+                        echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
+                        echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
+                    }
+                    else
+                    {
+                        echo '<a role="button" href="Product.php">Sell</a>';
+                        echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
+                        echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
+                    }
+                    
+                } 
+                else {
                     echo '<a role="button" href="Login.php">Sign In</a>';
                 }
 

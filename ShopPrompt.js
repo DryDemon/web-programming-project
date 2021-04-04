@@ -1,11 +1,11 @@
 var dialog;
 
-function OpenDialog(type) {
+function OpenDialog(type, productId) {
     if (type == "Auction" || type == "Best Offer") {
-        dialog = document.getElementById('dialog');
+        dialog = document.getElementById('dialog_' + productId);
         dialog.showModal();
     } else {
-        dialog = document.getElementById('dialogConfirm');
+        dialog = document.getElementById('dialogConfirm_' + productId);
         dialog.showModal();
     }
 }

@@ -38,7 +38,7 @@
             <div class="row">
                 <form>
                     <div class="BidButton">
-                        <a id="Open" onclick="OpenDialog('<?php echo $type; ?>')" class="DisplayA">
+                        <a id="Open" onclick="OpenDialog('<?php echo $type; ?>', '<?php echo $productId; ?>')" class="DisplayA">
                             <?php
                                 switch ($type) 
                                 {
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <dialog id="dialog">
+        <dialog id="dialog_<?php echo $productId; ?>">
             <form method="POST" action="profile_Check.php">
                     <label>Enter an Offer :</label><br>
                     <input type="number" name="Offer" min=0 class="form-input">
@@ -87,7 +87,7 @@
                     <a id="Close" onclick="CloseDialog()" name="DisplayB">Close</a>
             </form>
         </dialog>
-        <dialog id="dialogConfirm">
+        <dialog id="dialogConfirm_<?php echo $productId; ?>">
             <form method="POST" action="createBuy.php">
                         <label>Are you sure you want to buy this product ?</label><br>
                         <input type="hidden" name="productId" value="<?php echo $productId; ?>" />
