@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '598b98778a9edf685e5ab3cbc0f9df99b6bfe77c',
+    'reference' => '486870ea4b8032e2eea328176cd6e19a8799b02b',
     'name' => 'equipe/ebay',
   ),
   'versions' => 
@@ -51,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '598b98778a9edf685e5ab3cbc0f9df99b6bfe77c',
+      'reference' => '486870ea4b8032e2eea328176cd6e19a8799b02b',
     ),
     'firebase/php-jwt' => 
     array (

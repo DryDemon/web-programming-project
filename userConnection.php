@@ -1,5 +1,6 @@
 <?php
-require '.\vendor\autoload.php';
+
+require "./vendor/autoload.php";
 
 use Bcrypt\Bcrypt;
 use \Firebase\JWT\JWT;

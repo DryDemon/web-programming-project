@@ -10,7 +10,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     if($okay == true)
     {
         
-        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/shop.php");
+        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/Shop.php");
        
     }
     else{

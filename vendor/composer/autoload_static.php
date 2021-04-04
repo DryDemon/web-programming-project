@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
+class ComposerStaticInit7d9908fbfe57f91fc0c9773c331c40c9
 {
     public static $files = array (
         '5d9c5be1aa1fbc12016e2c5bd16bbc70' => __DIR__ . '/..' . '/dusank/knapsack/src/collection_functions.php',
@@ -69,9 +69,9 @@ class ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf2bd3108668562ae27b4fbc36387a51b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7d9908fbfe57f91fc0c9773c331c40c9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7d9908fbfe57f91fc0c9773c331c40c9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7d9908fbfe57f91fc0c9773c331c40c9::$classMap;
 
         }, null, ClassLoader::class);
     }

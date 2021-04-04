@@ -36,11 +36,42 @@
                     <div class="historyHeader">
                         <h6>History</h6>
                         <ul>
+                            <?php
+
+                            require_once "getSql.php";
+                            require_once "userConnection.php";
+
+                            $userData = getCurrentUserData();
+                            $userId = $userData[0];
                             
-                            <li>Iphone X <strong>SOLD xx/xx/xxxx $555.00</strong></li>
-                            <li>Ipad Air <strong>BOUGHT xx/xx/xxxx $600.00</strong></li>
-                            <li>Ipod Nano&nbsp;<strong>BOUGHT xx/xx/xxxx $490.00</strong><br></li>
-                            <li>Iphone X&nbsp;<strong>SOLD xx/xx/xxxx $555.00</strong><br></li>
+                            $result = getUserHistory($userId);
+
+                            if ($result != null) {
+
+                                while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                                    $negiciationRow[] = $row;
+                                }
+
+                                $result = getAllProductInDBByDate();
+                                while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                                    $productRows[] = $row;
+                                }
+
+
+                                foreach ($productRows as $product) {
+                                    foreach ($negiciationRow as $negociation) {
+                                        if ($negociation["idProduct"] == $product["id"]) {
+                                            $name = $product["Name"];
+                                            $price = $product["Price"];
+                                            echo $negociation;
+                                            $buying = 1;
+                                            include "template/shopProduct.php";
+                                        }
+                                    }
+                                }
+                            }
+                            ?>
+
                         </ul>
                     </div>
                 </div>
