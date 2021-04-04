@@ -7,18 +7,18 @@ function addProductInDB()
 {
   $dbConn = MyConnection();
   $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\''.$_POST["ProductImage"].'\',\'vide\',' . $_POST["ProductPrice"] . ')');
+  $last_id = $dbConn->insert_id;
+  return $last_id;
 }
 
-function addTransactionInDB()
+function addTransactionInDB($productId)
 {
   $dbConn = MyConnection();
-  $result = $dbConn->query('SELECT COUNT(*) FROM Product;');
-  $row = $result->fetch_array(MYSQLI_NUM);
   $todaydate = date('Y-m-d');
   $newdate = date('Y-m-d', strtotime($_POST["ProductDeadLine"]));
   require_once("userConnection.php");
   $utilisateur = getCurrentUserData();
-  $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct,idSeller) VALUES (\'' . $_POST["ProductType"] . '\',\'' . $todaydate . '\',\'' . $newdate . '\',\'' . $row[0] . '\',' . $utilisateur[0] . ')');
+  $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct,idSeller) VALUES (\'' . $_POST["ProductType"] . '\',\'' . $todaydate . '\',\'' . $newdate . '\',\'' . $productId . '\',' . $utilisateur[0] . ')');
 }
 
 function sqlLog()
@@ -30,10 +30,10 @@ function sqlLog()
 }
 
 if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"])) {
-  addProductInDB();
+  $productId = addProductInDB();
   sqlLog();
   echo 'step1';
-  addTransactionInDB();
+  addTransactionInDB($productId);
   sqlLog();
   echo 'step2';
   header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");

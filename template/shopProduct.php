@@ -4,6 +4,7 @@
         <div class="DisplayProduct">
             <div class="row">
                 <?php 
+                
                     if (isset($image)) 
                     {
                         if ($image != "vide") 
