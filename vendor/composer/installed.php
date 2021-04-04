@@ -6,11 +6,20 @@
     'aliases' => 
     array (
     ),
-    'reference' => '56a7960c8bbdcbc7105d503aff18951e0fe850e3',
+    'reference' => '598b98778a9edf685e5ab3cbc0f9df99b6bfe77c',
     'name' => 'equipe/ebay',
   ),
   'versions' => 
   array (
+    'dusank/knapsack' => 
+    array (
+      'pretty_version' => '10.0.0',
+      'version' => '10.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cc29a0bbaadbfcb958b98aa4fd69a4ad7d173bba',
+    ),
     'equipe/ebay' => 
     array (
       'pretty_version' => 'dev-main',
@@ -18,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '56a7960c8bbdcbc7105d503aff18951e0fe850e3',
+      'reference' => '598b98778a9edf685e5ab3cbc0f9df99b6bfe77c',
     ),
     'firebase/php-jwt' => 
     array (
@@ -38,14 +47,23 @@
       ),
       'reference' => '247e1ac20f8ef86592f48172c9a3d352be4806fa',
     ),
-    'simplon/mysql' => 
+    'simplon/helper' => 
     array (
-      'pretty_version' => '2.1.8',
-      'version' => '2.1.8.0',
+      'pretty_version' => '1.0.8',
+      'version' => '1.0.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a68cef143b811932d981c187bf3473f3b912903f',
+      'reference' => '053e7cdb4dc589ad4a773cb039a9b6830e9bb293',
+    ),
+    'simplon/mysql' => 
+    array (
+      'pretty_version' => '2.2.10',
+      'version' => '2.2.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '21da390cb2b3846a2407a410486b4642501e3098',
     ),
   ),
 );
