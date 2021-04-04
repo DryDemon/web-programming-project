@@ -9,6 +9,9 @@ use Simplon\Mysql\QueryBuilder\DeleteQueryBuilder;
 use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
 use Simplon\Mysql\QueryBuilder\UpdateQueryBuilder;
 
+/**
+ * @package Simplon\Mysql
+ */
 abstract class CrudStore implements CrudStoreInterface
 {
     /**
@@ -187,7 +190,7 @@ abstract class CrudStore implements CrudStoreInterface
             )
         );
 
-        if ($response && $builder->getModel())
+        if ($response)
         {
             $this->runBehaviour($builder->getModel(), $this->afterDeleteBehaviour);
         }

@@ -1,9 +1,5 @@
 <?php
 
-require_once("mysqlConnection.php");
-$dbConn = MyConnection();
-
-
     function analyseUser()
     {
         require_once "mysqlConnection.php";
@@ -24,18 +20,33 @@ $dbConn = MyConnection();
         require_once("mysqlConnection.php");
         $dbConn = MyConnection();
         $resultId = $dbConn->query('SELECT idSeller FROM Transaction WHERE idproduct = '.$idproduct);
-        return $resultId;
+        $row = $resultId->fetch_row();
+        return $row[0];
     }
 
     function createNegociation()
     {
+        require_once("mysqlConnection.php");
+        $dbConn = MyConnection();
+
         require_once "userConnection.php";
-        $iduser = getCurrentUserData();
+        $iduser = getCurrentUserData()[0];
         $idproduct = $_POST['productId'];
         $idseller =  getIdSeller($idproduct);
         $currentOffer = $_POST['price'];
         $Offer = $_POST['Offer'];
 
-        $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer) VALUES ('.$iduser.','.$idseller.',\'On going\','.$Offer.','.$currentOffer.')');
+        if(analyseUser()){
+            $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'On going\','.$Offer.','.$currentOffer.','.$idproduct.')');
+            echo '<hr> done';
+        }
+        else
+        {
+            echo'verifier profile';
+            //add js
+        }
+       
     }
+
+    createNegociation();
 ?>

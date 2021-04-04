@@ -4,13 +4,14 @@
         <div class="DisplayProduct">
             <div class="row">
                 <?php 
-                    if (isset($image)) {
-                    if ($image != "vide") {
-                        echo "<a class='ProductImage'><img src=" . $image . "></a>";
+                    if (isset($image)) 
+                    {
+                        if ($image != "vide") 
+                        {
+                            echo "<a class='ProductImage'><img src=" . $image . "></a>";
+                        }
                     }
-                }
                 ?>
-
             </div>
             <div class="row">
                 <div class="NameProduct">
@@ -21,8 +22,10 @@
                 </div>
                 </br>
                 <div class="TypeOfSelling">
-                    <label class="type"><?php echo $type; ?></label> <?php if($type == "Auction"){
-                        echo '<strong> End <span style="text-decoration: underline;"></span><label class="finalDate">'.$endDate.'</label></span></strong>';}
+                    <label class="type"><?php echo $type; ?></label> <?php if($type == "Auction")
+                    {
+                        echo '<strong> End <span style="text-decoration: underline;"></span><label class="finalDate">'.$endDate.'</label></span></strong>';
+                    }
                         ?>
                 </div>
             </div>
@@ -35,37 +38,41 @@
                 <form>
                     <div class="BidButton">
                         <a id="Open" onclick="OpenDialog()" class="DisplayA">
-    <?php
-        switch ($type) {
-            case "Auction":
-                echo "Bid !";
-                break;
-            case "Best Offer":
-                echo "Offer !";
-                break;
-                break;
-            case "Instant Buy":
-                echo "Buy";
-                break;
-
-    }?>
+                            <?php
+                                switch ($type) 
+                                {
+                                    case "Auction":
+                                        echo "Bid !";
+                                        break;
+                                    case "Best Offer":
+                                        echo "Offer !";
+                                        break;
+                                        break;
+                                    case "Instant Buy":
+                                        echo "Buy";
+                                        break;
+                                }
+                            ?>
                         </a>
+                        <input type="hidden" id="TypeOfSell" value="<?php echo $type; ?>" />
                     </div>
                 </form>
                 <div class="MinimumBid">
                     <label class="MiniBid">
-    <?php 
-        if ($type == 'Auction') {
-            echo "Minimum $" . $price;
-        } 
-        if ($type == 'Instant Buy') { {
-            echo "$" . $price;
-        }
-        if ($type == "Best Offer") {
-            echo "Recommended Price : $" . $price;
-
-        }
-    ?>
+                        <?php 
+                            if ($type == 'Auction') 
+                                {
+                                    echo "Minimum $" . $price;
+                                } 
+                            if ($type == 'Instant Buy') 
+                                {
+                                    echo "$" . $price;
+                                }
+                            if ($type == "Best Offer") 
+                                {
+                                    echo "Recommended Price : $" . $price;
+                                }
+                        ?>
                     </label>
                 </div>
             </div>
@@ -78,6 +85,15 @@
                     <input type="hidden" name="productId" value="<?php echo $productId; ?>" />
                     <input type="hidden" name="price" value="<?php echo $price; ?>" />
                     <a id="Close" onclick="CloseDialog()" name="DisplayB">Close</a>
+            </form>
+        </dialog>
+        <dialog id="dialogConfirm">
+            <form method="POST" action="createBuy.php">
+                        <label>Are you sure you want to buy this product ?</label><br>
+                        <input type="hidden" name="productId" value="<?php echo $productId; ?>" />
+                        <input type="hidden" name="price" value="<?php echo $price; ?>" />
+                        <button id="Confirm" type="submit">Yes</button>
+                        <a id="Close" onclick="CloseDialog()" name="DisplayB">No</a>
             </form>
         </dialog>
     </fieldset>
