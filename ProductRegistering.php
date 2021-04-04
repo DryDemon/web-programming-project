@@ -6,6 +6,7 @@ $dbConn = MyConnection();
 function addProductInDB()
 {
   $dbConn = MyConnection();
+echo 'image:'.$ProductImage;
   $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\''.$_POST["ProductImage"].'\',\'vide\',' . $_POST["ProductPrice"] . ')');
 }
 
@@ -36,7 +37,7 @@ if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_
   addTransactionInDB();
   sqlLog();
   echo 'step2';
-  header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
+  //header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
 } else {
   echo 'stepError';
 }

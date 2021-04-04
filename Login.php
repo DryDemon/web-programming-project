@@ -16,7 +16,7 @@
 
              <div class="NavMenuButtons" >
 
-               <button role="button" href="/register">Login</button>
+               <button role="button" onclick='register.php'>Sign Up</button>
             </div>
         </div>
     </nav>
