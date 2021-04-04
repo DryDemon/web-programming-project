@@ -37,7 +37,7 @@
             <div class="row">
                 <form>
                     <div class="BidButton">
-                        <a id="Open" onclick="OpenDialog()" class="DisplayA">
+                        <a id="Open" onclick="OpenDialog('<?php echo $type; ?>')" class="DisplayA">
                             <?php
                                 switch ($type) 
                                 {
@@ -46,7 +46,6 @@
                                         break;
                                     case "Best Offer":
                                         echo "Offer !";
-                                        break;
                                         break;
                                     case "Instant Buy":
                                         echo "Buy";
