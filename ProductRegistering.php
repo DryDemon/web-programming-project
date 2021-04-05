@@ -8,6 +8,7 @@ function addProductInDB()//create a query to add a product in the db, return the
   $dbConn = MyConnection();
   $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\''.$_POST["ProductImage"].'\',\'vide\',' . $_POST["ProductPrice"] . ')');
   $last_id = $dbConn->insert_id;
+  echo $last_id;
   return $last_id;
 }
 
@@ -36,7 +37,7 @@ if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_
   addTransactionInDB($productId);
   sqlLog();
   echo 'step2';
-  header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
+  // header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
 } else {
   echo 'stepError';
 }
