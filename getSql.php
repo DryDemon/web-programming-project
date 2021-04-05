@@ -30,8 +30,8 @@ function getUserHistory($userId){
 
 function updateAuctionPrice($productId, $price){
     $dbConn = MyConnection();
-    $result = $dbConn->query("UPDATE Product SET Price = ".$price." WHERE id = ".$price);  
-    
+    $result = $dbConn->query("UPDATE Product SET Price = ".$price." WHERE id = ".$productId);  
+
     return $result;
 
 }
@@ -39,7 +39,7 @@ function updateAuctionPrice($productId, $price){
 function updateNegociationStatus($idTransaction, $status){
     $dbConn = MyConnection();
     $result = $dbConn->query("UPDATE Negotiation SET Status = '".$status."' WHERE idTransaction = ".$idTransaction);  
-    echo "UPDATE Negotiation SET Status = '".$status."' WHERE idTransaction = ".$idTransaction;
+
     return $result;
 
 }
