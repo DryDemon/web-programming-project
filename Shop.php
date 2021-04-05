@@ -26,14 +26,14 @@
                 require_once "userConnection.php";
                 $utilisateur = getCurrentUserData();
 
-                if (isUserConnected()) {
+                if (isUserConnected()) {//if the user is the Admin
                     if($utilisateur[3]=="Admin@admin.com")
                     {
                         echo '<a role="button" onclick="AdminPrompt()">User List</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
                     }
-                    else
+                    else//if the user is a simple user
                     {
                         echo '<a role="button" href="Product.php">Sell</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
@@ -41,7 +41,7 @@
                     }
                     
                 } 
-                else {
+                else {//if no one is connected
                     echo '<a role="button" href="Login.php">Sign In</a>';
                 }
 
@@ -163,7 +163,10 @@
     <dialog id="userlist">
         <label>Select the user you want to remove.</label><br>
                 <form method="POST" action="adminUserRemove.php">
+                
+                <a type="button" onClick="CloseDialog()">Close</a>
                 <button type="submit">Remove</button>
+
                                         <select name="userSelected">
                                                 <option value="">--Select a User--</option>
                                                     <?php

@@ -1,6 +1,6 @@
 var dialog;
 
-function OpenDialog(type, productId) {
+function OpenDialog(type, productId) {//will open specific dialog dependig of the type of the transaction
     if (type == "Auction" || type == "Best Offer") {
         dialog = document.getElementById('dialog_' + productId);
         dialog.showModal();
@@ -10,13 +10,13 @@ function OpenDialog(type, productId) {
     }
 }
 
-function CloseDialog() {
+function CloseDialog() {//close selected dialog
 
     dialog.close();
 
 }
 
-function AdminPrompt()
+function AdminPrompt()//manage the user list dialog
 {
     dialog = document.getElementById('userlist');
         dialog.showModal();

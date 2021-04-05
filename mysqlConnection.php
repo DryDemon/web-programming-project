@@ -1,5 +1,5 @@
 <?php
-      function MyConnection()
+      function MyConnection()//information of the database, return a connection
   {
     $servername = "bzztzotiwn15xtcxbmgp-mysql.services.clever-cloud.com";
     $username = "uxd5jmnb3cu2ukyn";

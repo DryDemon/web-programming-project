@@ -1,7 +1,7 @@
 <?php 
     
 
-    function analyseUser()
+    function analyseUser()//analyse if the user's information are enough completed on his profile
     {
         require_once "mysqlConnection.php";
         require_once "userConnection.php";
@@ -16,7 +16,7 @@
         }
     }
 
-    function getIdSeller($idproduct)
+    function getIdSeller($idproduct)//get the id of the targeted product
     {
         require_once("mysqlConnection.php");
         $dbConn = MyConnection();
@@ -29,7 +29,7 @@
     require_once("mysqlConnection.php");
     $dbConn = MyConnection();
 
-    require_once "userConnection.php";
+    require_once "userConnection.php";//get the necessecary variable to complete the query
     $iduser = getCurrentUserData()[0];
     $idproduct = $_POST['productId'];
     echo $idproduct;
@@ -37,7 +37,7 @@
     $currentOffer = $_POST['price'];
     $Offer = $currentOffer;
 
-    if(analyseUser()){
+    if(analyseUser()){//if the information of the user are enough, then the query ll be sent to the database
         $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'Done\','.$Offer.','.$currentOffer.','.$idproduct.')');
         echo '<hr> done';
         $dbConn->query('DELETE FROM Transaction WHERE idproduct = '.$idproduct);

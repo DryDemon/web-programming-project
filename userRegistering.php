@@ -16,11 +16,11 @@ function addUserInDB($lastname,$name,$nickname,$email,$city,$country,$adress,$pa
     $Verify = $dbConn->query('INSERT INTO User (LastName,Nickname,Email,City,Country,Adress,Password,Name) VALUES (\'vide\',\''.$nickname.'\',\''.$email.'\',\'vide\',\'vide\',\'vide\',\''.$password.'\',\'vide\')');  
 }
 
-if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']))
+if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']))//if the necessary inputs are completed
 {
     
      require_once("userConnection.php");
-     $user = verifyUser($_POST['email']);
+     $user = verifyUser($_POST['email']);//if the email is not already used
     if($user == false)
     {
         
@@ -40,7 +40,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
 }
 else
 {
-    echo 'Please, adjust your input before continuing.';
+    echo 'Please, adjust your input before continuing.';//blindage déjà existant grace aux inputs html du google ?
 }
 
 ?>

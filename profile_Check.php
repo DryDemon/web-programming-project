@@ -24,7 +24,7 @@
         return $row[0];
     }
 
-    function createNegociation()
+    function createNegociation()//create a query to add a Negociation in the db
     {
         require_once("mysqlConnection.php");
         $dbConn = MyConnection();
@@ -36,7 +36,7 @@
         $currentOffer = $_POST['price'];
         $Offer = $_POST['Offer'];
 
-        if(analyseUser()){
+        if(analyseUser()){//check if the user information are enough
             $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'On going\','.$Offer.','.$currentOffer.','.$idproduct.')');
             echo '<hr> done';
         }

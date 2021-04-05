@@ -2,7 +2,7 @@
 require_once "mysqlConnection.php";
 require_once "userConnection.php";
 
-function updateUsernameStuff()
+function updateUsernameStuff()//update the informations of the user (Name and other related to it)
 {
 
     $username = $_POST['username'];
@@ -17,7 +17,7 @@ function updateUsernameStuff()
     echo("Update User SET Nickname='" . $username . "', LastName='" . $last_name . "', Name='" . $first_name . "', Email='" . $email . "' WHERE id=" . $id);
 }
 
-function updateAdressStuff()
+function updateAdressStuff()//update the informations of the user (Adress and other related to it)
 {
     $adress = $_POST['adress'];
     $city = $_POST['city'];
@@ -29,7 +29,7 @@ function updateAdressStuff()
     $update = $dbConn->query("Update User SET Adress='" . $adress . "', City='" . $city . "', Country='" . $country . "' WHERE id=" . $id);
     
 }
-function updateCardStuff()
+function updateCardStuff()//update the informations of the user (CreditCard and other related to it)
 {
     $ccn = $_POST['ccn'];
     $exp = $_POST['exd'];

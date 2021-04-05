@@ -36,6 +36,20 @@
                 </p>
             </div>
             <div class="row">
+            <?php
+                            require_once "userConnection.php";
+                            $utilisateur = getCurrentUserData();
+
+                            if (isUserConnected()) {
+                                if($utilisateur[3]=="Admin@admin.com")
+                                {   
+                                    echo'<form method="POST" action="deleteTransaction.php">';
+                                    echo'<input type="hidden" name="ProductDelete" value="'.$productId.'">';
+                                    echo '<button name="sendOffer" type="submit">Delete</button>' ;
+                                    echo '</form>';
+                                }
+                            }
+                        ?>
                 <form>
                     <div class="BidButton">
                         <a id="Open" onclick="OpenDialog('<?php echo $type; ?>', '<?php echo $productId; ?>')" class="DisplayA">

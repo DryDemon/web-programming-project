@@ -3,7 +3,7 @@
 require_once("mysqlConnection.php");
 $dbConn = MyConnection();
 
-function addProductInDB()
+function addProductInDB()//create a query to add a product in the db, return the last id of the product list
 {
   $dbConn = MyConnection();
   $Verify = $dbConn->query('INSERT INTO Product (Name,Description,Category,Image,Video,Price) VALUES (\'' . $_POST["ProductName"] . '\',\'' . $_POST["ProductDescription"] . '\',\'' . $_POST["ProductCategory"] . '\',\''.$_POST["ProductImage"].'\',\'vide\',' . $_POST["ProductPrice"] . ')');
@@ -11,7 +11,7 @@ function addProductInDB()
   return $last_id;
 }
 
-function addTransactionInDB($productId)
+function addTransactionInDB($productId)//create a query to add a transaction in the db
 {
   $dbConn = MyConnection();
   $todaydate = date('Y-m-d');
@@ -21,7 +21,7 @@ function addTransactionInDB($productId)
   $dbConn->query('INSERT INTO Transaction (Type,CreationDate,EndDate,idproduct,idSeller) VALUES (\'' . $_POST["ProductType"] . '\',\'' . $todaydate . '\',\'' . $newdate . '\',\'' . $productId . '\',' . $utilisateur[0] . ')');
 }
 
-function sqlLog()
+function sqlLog()//print the sql log of the db
 {
   $dbConn = MyConnection();
   if ($dbConn->connect_error) {
@@ -29,7 +29,7 @@ function sqlLog()
   }
 }
 
-if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"])) {
+if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_POST["ProductType"]) && isset($_POST["ProductDescription"]) && isset($_POST["ProductPrice"])) {//if all the inputs necessary inputs are completed, add the product in the db
   $productId = addProductInDB();
   sqlLog();
   echo 'step1';
