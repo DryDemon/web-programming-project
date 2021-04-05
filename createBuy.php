@@ -38,7 +38,7 @@
     $Offer = $currentOffer;
 
     if(analyseUser()){//if the information of the user are enough, then the query ll be sent to the database
-        $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'Done\','.$Offer.','.$currentOffer.','.$idproduct.')');
+        $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'Accepted\','.$Offer.','.$currentOffer.','.$idproduct.')');
         echo '<hr> done';
         $dbConn->query('DELETE FROM Transaction WHERE idproduct = '.$idproduct);
     }

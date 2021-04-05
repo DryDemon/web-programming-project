@@ -22,7 +22,7 @@ function getAllTransactionsInDBByDate(){
 
 function getUserHistory($userId){
     $dbConn = MyConnection();
-    $result = $dbConn->query("SELECT * from Negotiation WHERE Status LIKE 'Done' and  (idSeller = ".$userId." or idUser = ".$userId.")");  
+    $result = $dbConn->query("SELECT * from Negotiation WHERE Status LIKE 'Accepted' and  (idSeller = ".$userId." or idUser = ".$userId.")");  
     
     return $result;
 
