@@ -18,6 +18,16 @@ function CloseDialog() {//close selected dialog
 
 function AdminPrompt()//manage the user list dialog
 {
-    dialog = document.getElementById('userlist');
-        dialog.showModal();
+    dialog = document.getElementById("list");
+    
+    document.getElementById("user").hidden = false;
+    dialog.showModal();
+    
+       
+}
+
+function NegociationPrompt()//manage the negotiation list
+{
+    dialog = document.getElementById("list");
+    dialog.showModal();
 }
