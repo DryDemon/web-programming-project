@@ -14,19 +14,14 @@ function analyseUser()
         }
     }
 
-    function getIdSeller($idproduct)
+    if(analyseUser())
     {
-        require_once("mysqlConnection.php");
-        $dbConn = MyConnection();
-        $resultId = $dbConn->query('SELECT idSeller FROM Transaction WHERE idproduct = '.$idproduct);
-        $row = $resultId->fetch_row();
-        return $row[0];
+        $idproduct = $_POST['productId'];
+        $Offer = $_POST['Offer'];
+        require_once "getSql.php";
+        updateAuctionPrice($idproduct, $Offer);
+    
     }
-
-    $idproduct = $_POST['productId'];
-    $Offer = $_POST['Offer'];
-    require_once "getSql.php";
-    updateAuctionPrice($idproduct, $Offer);
-
+    
     header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
 ?>    
