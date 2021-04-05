@@ -16,7 +16,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     else{
         echo '<body style="background-color:red">';
                 echo "<h1>Please verify your informations</h1>";
-            echo "<a href='Register.php'>Go Back</a>";
+            echo "<a href='Login.php'>Go Back</a>";
 
     }
     
@@ -24,7 +24,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
 else
 {
     echo 'Please, adjust your input before continuing.';
-            echo "<a href='Register.php'>Go Back</a>";
+            echo "<a href='Login.php'>Go Back</a>";
             echo "<h1>Please verify your informations</h1>";
 
         }
