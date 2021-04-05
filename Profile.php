@@ -56,17 +56,19 @@
                                 while ($row = $result->fetch_array(MYSQLI_BOTH)) {
                                     $productRows[] = $row;
                                 }
+                                if (isset($productRows) && isset($negiciationRow)) {
 
-                                if ($productRows != null && $negiciationRow != null) {
+                                    if ($productRows != null && $negiciationRow != null) {
 
-                                    foreach ($productRows as $product) {
-                                        foreach ($negiciationRow as $negociation) {
-                                            if ($negociation["idProduct"] == $product["id"]) {
-                                                $name = $product["Name"];
-                                                $price = $product["Price"];
-                                                $buying = $negociation["idUser"] == $userId;
+                                        foreach ($productRows as $product) {
+                                            foreach ($negiciationRow as $negociation) {
+                                                if ($negociation["idProduct"] == $product["id"]) {
+                                                    $name = $product["Name"];
+                                                    $price = $product["Price"];
+                                                    $buying = $negociation["idUser"] == $userId;
 
-                                                include "template/userProfileHistory.php";
+                                                    include "template/userProfileHistory.php";
+                                                }
                                             }
                                         }
                                     }
