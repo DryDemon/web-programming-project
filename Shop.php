@@ -80,7 +80,7 @@
                     foreach ($cats as $cat) {
                             $checked = "";
 
-                        echo "<li style='color:white;'><input onchange='reloadFilter()' type='checkbox' id='" . $cat . "' name='" . $cat . "'/><label for='" . $cat . "'>" . $cat . "</label></li>";
+                        echo "<li style='color:white;'><input onchange='reloadFilter()' type='checkbox' checked='checked' id='" . $cat . "' name='" . $cat . "'/><label for='" . $cat . "'>" . $cat . "</label></li>";
                     }
 
                     echo "<input name='cats' id='cats' type='hidden' value='".implode(",", $cats)."'/>";
