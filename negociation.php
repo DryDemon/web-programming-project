@@ -41,7 +41,7 @@
                                 $utilisateur = getCurrentUserData();
 
                                 $iduser = $utilisateur[0];
-                                $userResult = $dbConn->query('SELECT inComingOffer, currentOffer, idProduct, idTransaction FROM Negotiation WHERE idUser = ' . $iduser . ' AND Status = "On Going"');
+                                $userResult = $dbConn->query('SELECT inComingOffer, currentOffer, idProduct, idTransaction FROM Negotiation WHERE idSeller = ' . $iduser . ' AND Status = "On Going"');
 
                                 while ($row = $userResult->fetch_row()) 
                                 {
