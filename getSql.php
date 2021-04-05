@@ -28,5 +28,13 @@ function getUserHistory($userId){
 
 }
 
+function updateAuctionPrice($productId, $price){
+    $dbConn = MyConnection();
+    $result = $dbConn->query("UPDATE Product SET Price = ".$price." WHERE id = ".$price);  
+    
+    return $result;
+
+}
+
 
 ?>
