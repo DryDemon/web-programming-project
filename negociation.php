@@ -49,7 +49,7 @@
                                  echo '<td>'.$row[2].'</td>';  
                                  echo '<td>'.$row[1].'</td>';  
                                  echo '<td>'.$row[0].'</td>';  
-                                 echo '<td><a id="Close" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Accepted`" name="DisplayB">Accept</a><a id="Close" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Denied`" name="DisplayB">Refuse</a></td>';
+                                 echo '<td><a id="Close" class="BtnAccept" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Accepted`" name="DisplayB">Accept</a><a class="BtnRefuse" id="Close" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Denied`" name="DisplayB">Refuse</a></td>';
                                 echo '</tr>';
                                 }
                                 ?>
