@@ -42,7 +42,7 @@
                     if ($utilisateur[3] == "Admin@admin.com") {
                         echo '<form method="POST" action="deleteTransaction.php">';
                         echo '<input type="hidden" name="ProductDelete" value="' . $productId . '">';
-                        echo '<button name="sendOffer" type="submit">Delete</button>';
+                        echo '<button name="sendOffer" type="submit" style="margin-bottom: 1rem; background-color: #f30808;">Delete</button>';
                         echo '</form>';
                     }
                 }

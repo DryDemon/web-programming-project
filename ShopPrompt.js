@@ -18,21 +18,10 @@ function CloseDialog() { //close selected dialog
 
 function AdminPrompt() //manage the user list dialog
 {
-    dialog = document.getElementById("list");
-
-    document.getElementById("user").hidden = false;
+    dialog = document.getElementById("userlist");
     dialog.showModal();
 
 
-}
-
-function NegociationPrompt() //manage the negotiation list
-{
-    // alert(1);
-    dialog = document.getElementById("list");
-    // alert(dialog)
-    // console.log(dialog)
-    dialog.showModal();
 }
 
 function reloadFilter() {

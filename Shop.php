@@ -17,6 +17,15 @@
 
         <div class="NavMenuContainer">
             <a class="NavMenuLogo">FunMarket</a>
+            <?php
+
+                require_once "userConnection.php";
+                $utilisateur = getCurrentUserData();
+
+                if (isUserConnected()) {
+                        echo '<a style="color:#f30808;">ADMIN</a>';
+                    }
+             ?>       
 
             <div class="NavMenuButtons">
 
@@ -27,7 +36,7 @@
                 $utilisateur = getCurrentUserData();
 
                 if (isUserConnected()) { //if the user is the Admin
-                    echo '<a role="button" onclick="NegociationPrompt()" style="margin-right: .25rem;">Negoctiations</a>';
+                    echo '<a role="button" href="negociation.php" style="margin-right: .25rem;">Negoctiations</a>';
                     // echo '<button role="button" type="submit" onclick="NegociationPrompt()" class="forme-button">Negociations</button>';
                     if ($utilisateur[3] == "Admin@admin.com") {
 
@@ -180,34 +189,7 @@
             </div>
         </div>
     </section>
-    <dialog id="list">
-        <section hidden name="negotiation" id="negotiation">
-            <form method="POST" action="#">
-                <a type="button" onClick="CloseDialog()">Close</a>
-                <label>Hey, here are your on going negociations</label>
-                <hr>
-                <button type="submit" name="action" value="Accept">Accept</button>
-                <button type="submit" name="action" value="Refuse">Refuse</button>
-                <select name="negociationSelected">
-                    <option value="">--Select a Negotiation--</option>
-                    <?php
-                    require_once("mysqlConnection.php");
-                    $dbConn = MyConnection();
-                    require_once "userConnection.php";
-                    $utilisateur = getCurrentUserData();
-                    $iduser = $utilisateur[0];
-                    $userResult = $dbConn->query('SELECT idTransaction, inComingOffer, currentOffer, idProduct FROM Negotiation WHERE idUser = ' . $iduser . ' AND Status = "On Going"');
-
-                    while ($row = $userResult->fetch_row()) {
-                        echo '<option value="' . $row[0] . '">id Product : ' . $row[3] . ' Recommended price : ' . $row[2] . ' In Coming Offer : ' . $row[1] . '</option>';
-                    }
-                    $dbConn . close();
-                    ?>
-                </select>
-
-            </form>
-        </section>
-        <section hidden name="user" id="user">
+    <dialog id="userlist">
             <form method="POST" action="adminUserRemove.php">
                 <label>Select the user you want to remove.</label><br>
                 <a type="button" onClick="CloseDialog()">Close</a>
@@ -228,7 +210,6 @@
                 </select>
 
             </form>
-        </section>
     </dialog>
     <footer>
         <div class="container">
