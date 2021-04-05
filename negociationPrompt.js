@@ -1,7 +1,11 @@
-function acceptTransaction(id) {
-    alert("accept" + id)
-}
+// function acceptTransaction(id) {
+//     alert("accept" + id)
+//         // -> acecpted
+//     updateNegociationStatus
+// }
 
-function refuseTransaction(id) {
-    alert("refuse" + id)
-}
+// function refuseTransaction(id) {
+//     alert("refuse" + id)
+//         // -> declined
+//     updateNegociationStatus
+// }

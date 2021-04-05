@@ -15,7 +15,7 @@
         <div class="contain">
             <nav class="content">
                 <div class="logo">
-                    <label class="Status">Status : Buyer/Seller</label>&nbsp;
+                    <label class="Status">Status : Buyer/Seller</label>
                     <button class="back" onclick="window.location.href='Shop.php'">Back</button>
                 </div>
         </div>
@@ -49,8 +49,8 @@
                                  echo '<td>'.$row[2].'</td>';  
                                  echo '<td>'.$row[1].'</td>';  
                                  echo '<td>'.$row[0].'</td>';  
-                                 echo '<td><a id="Close" onclick="acceptTransaction('.$row[3].')" name="DisplayB">Accept</a><a id="Close" onclick="refuseTransaction('.$row[3].')" name="DisplayB">Refuse</a></td>';
-                                 echo '</tr>';
+                                 echo '<td><a id="Close" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Accepted`" name="DisplayB">Accept</a><a id="Close" onclick="window.location.href=`negociationChangeStatus.php?id='.$row[3].'&status=Denied`" name="DisplayB">Refuse</a></td>';
+                                echo '</tr>';
                                 }
                                 ?>
                         </tbody>
