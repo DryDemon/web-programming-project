@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Profile</title>
+    <script type="text/javascript" src="negociationPrompt.js"></script>
     <link rel="stylesheet" href="profileStyle.css">
 </head>
 
@@ -40,7 +41,7 @@
                                 $utilisateur = getCurrentUserData();
 
                                 $iduser = $utilisateur[0];
-                                $userResult = $dbConn->query('SELECT inComingOffer, currentOffer, idProduct FROM Negotiation WHERE idUser = ' . $iduser . ' AND Status = "On Going"');
+                                $userResult = $dbConn->query('SELECT inComingOffer, currentOffer, idProduct, idTransaction FROM Negotiation WHERE idUser = ' . $iduser . ' AND Status = "On Going"');
 
                                 while ($row = $userResult->fetch_row()) 
                                 {
@@ -48,7 +49,7 @@
                                  echo '<td>'.$row[2].'</td>';  
                                  echo '<td>'.$row[1].'</td>';  
                                  echo '<td>'.$row[0].'</td>';  
-                                 echo '<td><button class="BtnAccept">Accept</button><button class="BtnRefuse">Refuse</button></td>';
+                                 echo '<td><a id="Close" onclick="acceptTransaction('.$row[3].')" name="DisplayB">Accept</a><a id="Close" onclick="refuseTransaction('.$row[3].')" name="DisplayB">Refuse</a></td>';
                                  echo '</tr>';
                                 }
                                 ?>
