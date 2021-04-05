@@ -37,7 +37,7 @@
                 $utilisateur = getCurrentUserData();
 
                 if (isUserConnected()) { //if the user is the Admin
-                    echo '<a role="button" href="negociation.php" style="margin-right: .25rem;">Negoctiations</a>';
+                    echo '<a role="button" href="negociation.php" style="margin-right: .25rem;">Negotiations</a>';
                     // echo '<button role="button" type="submit" onclick="NegociationPrompt()" class="forme-button">Negociations</button>';
                     if ($utilisateur[3] == "Admin@admin.com") {
 
