@@ -1,10 +1,17 @@
 var dialog;
 
 function OpenDialog(type, productId) { //will open specific dialog dependig of the type of the transaction
-    if (type == "Auction" || type == "Best Offer") {
+    if (type == "Best Offer") {
         dialog = document.getElementById('dialog_' + productId);
         dialog.showModal();
-    } else {
+    } 
+    else if(type == "Auction"){
+        dialog = document.getElementById('dialogAuction_' + productId);
+        dialog.showModal();
+    }
+    
+    
+    else {
         dialog = document.getElementById('dialogConfirm_' + productId);
         dialog.showModal();
     }
