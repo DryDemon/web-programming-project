@@ -22,7 +22,8 @@
                 require_once "userConnection.php";
                 $utilisateur = getCurrentUserData();
 
-                if (isUserConnected()) {
+                if (isUserConnected() && $utilisateur[3] == "Admin@admin.com") {
+                    
                         echo '<a style="color:#f30808;">ADMIN</a>';
                     }
              ?>       
