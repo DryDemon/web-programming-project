@@ -14,7 +14,18 @@
                 
                 <div class="NavMenuButtons">
                     
-                    <button role="button" href="Profile.php">Login</button>
+                <a style="    display: inline-block;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+" href="/Login.php">Sign In</a>
                 </div>
             </div>
         </nav>
