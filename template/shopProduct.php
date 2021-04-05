@@ -103,5 +103,15 @@
                 <a id="Close" onclick="CloseDialog()" name="DisplayB">No</a>
             </form>
         </dialog>
+        <dialog id="dialogAuction_<?php echo $productId; ?>">
+            <form method="POST" action="createAuctionBuy.php">
+            <label>Enter an Offer for the auction :</label><br>
+                <input type="number" name="Offer" min=<?php echo $price; ?> class="form-input">
+                <button name="sendOffer" type="submit">Offer</button>
+                <input type="hidden" name="productId" value="<?php echo $productId; ?>" />
+                <input type="hidden" name="price" value="<?php echo $price; ?>" />
+                <a id="Close" onclick="CloseDialog()" name="DisplayB">Close</a>
+            </form>
+        </dialog>
     </fieldset>
 </div>
