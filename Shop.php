@@ -26,25 +26,22 @@
                 require_once "userConnection.php";
                 $utilisateur = getCurrentUserData();
 
-                if (isUserConnected()) {//if the user is the Admin
+                if (isUserConnected()) { //if the user is the Admin
                     echo '<a role="button" onclick="NegociationPrompt()" style="margin-right: .25rem;">Negoctiations</a>';
-                    if($utilisateur[3]=="Admin@admin.com")
-                    {
-                        
+                    // echo '<button role="button" type="submit" onclick="NegociationPrompt()" class="forme-button">Negociations</button>';
+                    if ($utilisateur[3] == "Admin@admin.com") {
+
                         echo '<a role="button" onclick="AdminPrompt()">User List</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
-                    }
-                    else//if the user is a simple user
+                    } else //if the user is a simple user
                     {
-                       
+
                         echo '<a role="button" href="Product.php">Sell</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="Profile.php">Profile</a>';
                         echo '<a role="button" style="margin-left:0.25rem" href="userDisconnect.php">Disconnect</a>'; //user disconnect itself
                     }
-                    
-                } 
-                else {//if no one is connected
+                } else { //if no one is connected
                     echo '<a role="button" href="Login.php">Sign In</a>';
                 }
 
@@ -157,58 +154,56 @@
             </div>
         </div>
     </section>
-        <dialog id="list">
+    <dialog id="list">
         <section hidden name="negotiation" id="negotiation">
-                    <form method="POST" action="#">
-                        <a  type="button" onClick="CloseDialog()">Close</a>  
-                        <label>Hey, here are your on going negociations</label>
-                        <hr>
-                            <button type="submit" name="action" value="Accept">Accept</button>
-                            <button type="submit" name="action" value="Refuse">Refuse</button>
-                                <select name="negociationSelected">
-                                            <option value="">--Select a Negotiation--</option>
-                                            <?php
-                                                require_once("mysqlConnection.php");
-                                                $dbConn = MyConnection();
-                                                require_once "userConnection.php";
-                                                $utilisateur = getCurrentUserData();
-                                                $iduser = $utilisateur[0];
-                                                $userResult = $dbConn->query('SELECT idTransaction, inComingOffer, currentOffer, idProduct FROM Negotiation WHERE idUser = '.$iduser.' AND Status = "On Going"');
-                                                
-                                                while($row = $userResult->fetch_row())
-                                                {
-                                                    echo '<option value="'.$row[0].'">id Product : '.$row[3].' Recommended price : '.$row[2].' In Coming Offer : '.$row[1].'</option>';
-                                                }
-                                                $dbConn.close();
-                                            ?>
-                                </select>
-                            
-                    </form>
+            <form method="POST" action="#">
+                <a type="button" onClick="CloseDialog()">Close</a>
+                <label>Hey, here are your on going negociations</label>
+                <hr>
+                <button type="submit" name="action" value="Accept">Accept</button>
+                <button type="submit" name="action" value="Refuse">Refuse</button>
+                <select name="negociationSelected">
+                    <option value="">--Select a Negotiation--</option>
+                    <?php
+                    require_once("mysqlConnection.php");
+                    $dbConn = MyConnection();
+                    require_once "userConnection.php";
+                    $utilisateur = getCurrentUserData();
+                    $iduser = $utilisateur[0];
+                    $userResult = $dbConn->query('SELECT idTransaction, inComingOffer, currentOffer, idProduct FROM Negotiation WHERE idUser = ' . $iduser . ' AND Status = "On Going"');
+
+                    while ($row = $userResult->fetch_row()) {
+                        echo '<option value="' . $row[0] . '">id Product : ' . $row[3] . ' Recommended price : ' . $row[2] . ' In Coming Offer : ' . $row[1] . '</option>';
+                    }
+                    $dbConn . close();
+                    ?>
+                </select>
+
+            </form>
         </section>
         <section hidden name="user" id="user">
-                    <form method="POST" action="adminUserRemove.php">
-                        <label>Select the user you want to remove.</label><br>
-                        <a type="button" onClick="CloseDialog()">Close</a>
-                        <button type="submit">Remove</button>
+            <form method="POST" action="adminUserRemove.php">
+                <label>Select the user you want to remove.</label><br>
+                <a type="button" onClick="CloseDialog()">Close</a>
+                <button type="submit">Remove</button>
 
-                                                <select name="userSelected">
-                                                        <option value="">--Select a User--</option>
-                                                            <?php
-                                                            require_once("mysqlConnection.php");
-                                                            $dbConn = MyConnection();
-                                                            $userResult = $dbConn->query('SELECT Email FROM User WHERE Email != \'Admin@admin.com\';');
-                                                            
-                                                            while($row = $userResult->fetch_row())
-                                                            {
-                                                                echo '<option value="'.$row[0].'">'.$row[0].'</option>';
-                                                            }
-                                                            $dbConn.close();
-                                                        ?>
-                                                </select>
-                                            
-                    </form>   
-        </section>        
-        </dialog>
+                <select name="userSelected">
+                    <option value="">--Select a User--</option>
+                    <?php
+                    require_once("mysqlConnection.php");
+                    $dbConn = MyConnection();
+                    $userResult = $dbConn->query('SELECT Email FROM User WHERE Email != \'Admin@admin.com\';');
+
+                    while ($row = $userResult->fetch_row()) {
+                        echo '<option value="' . $row[0] . '">' . $row[0] . '</option>';
+                    }
+                    $dbConn . close();
+                    ?>
+                </select>
+
+            </form>
+        </section>
+    </dialog>
     <footer>
         <div class="container">
             <a href="#">About</a> <a href="#">Contact</a>

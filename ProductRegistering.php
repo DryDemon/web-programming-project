@@ -37,7 +37,7 @@ if (isset($_POST["ProductName"]) && isset($_POST["ProductCategory"]) && isset($_
   addTransactionInDB($productId);
   sqlLog();
   echo 'step2';
-  // header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
+  header("Location: " . "http://" . $_SERVER["HTTP_HOST"] . "/Shop.php");
 } else {
   echo 'stepError';
 }
