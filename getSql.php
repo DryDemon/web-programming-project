@@ -36,5 +36,13 @@ function updateAuctionPrice($productId, $price){
 
 }
 
+function updateNegociationStatus($idTransaction, $status){
+    $dbConn = MyConnection();
+    $result = $dbConn->query("UPDATE Negotiation SET Status = '".$status."' WHERE idTransaction = ".$idTransaction);  
+    echo "UPDATE Negotiation SET Status = '".$status."' WHERE idTransaction = ".$idTransaction;
+    return $result;
+
+}
+
 
 ?>
