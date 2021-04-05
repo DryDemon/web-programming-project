@@ -24,7 +24,7 @@
                 <div class="TypeOfSelling">
                     <label class="type"><?php echo $type; ?></label> <?php if ($type == "Auction") {
                                                                             echo '<strong> End <span style="text-decoration: underline;"></span><label class="finalDate">' . $endDate . '</label></span></strong>';
-                                                                            block                                    }
+                                                                        }
                                                                         ?>
                 </div>
             </div>
