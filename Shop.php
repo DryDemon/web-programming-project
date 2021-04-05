@@ -59,6 +59,32 @@
                     <li><a href="#Auction">Auction</a></li>
                     <li><a href="#BestOffer">Best Offer</a></li>
                     <li><a href="#InstantBuy">Instant Buy</a></li>
+                    <?php
+                    require_once "getSql.php";
+
+                    $cats = array();
+
+                    $result = getAllProductInDBByDate();
+                    while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+                        $productRows[] = $row;
+                    }
+
+                    if ($productRows != null) {
+                        foreach ($productRows as $product) {
+                            if (!in_array($product["Category"], $cats)) {
+                                array_push($cats, $product["Category"]);
+                            }
+                        }
+                    }
+
+                    foreach ($cats as $cat) {
+                            $checked = "";
+
+                        echo "<li style='color:white;'><input onchange='reloadFilter()' type='checkbox' id='" . $cat . "' name='" . $cat . "'/><label for='" . $cat . "'>" . $cat . "</label></li>";
+                    }
+
+                    echo "<input name='cats' id='cats' type='hidden' value='".implode(",", $cats)."'/>";
+                    ?>
                 </ul>
             </div>
         </div>

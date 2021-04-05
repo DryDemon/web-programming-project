@@ -34,3 +34,22 @@ function NegociationPrompt() //manage the negotiation list
     // console.log(dialog)
     dialog.showModal();
 }
+
+function reloadFilter() {
+    var cats = document.getElementById("cats").value.split(",");
+
+    for (var cat of cats) {
+        var checked = document.getElementById(cat).checked;
+        var x = document.getElementsByClassName(cat);
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if (checked) {
+                x[i].style.display = "block";
+            } else {
+                x[i].style.display = "none";
+
+            }
+        }
+
+    }
+}
