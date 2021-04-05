@@ -43,7 +43,7 @@
 
                             $userData = getCurrentUserData();
                             $userId = $userData[0];
-                            
+
                             $result = getUserHistory($userId);
 
                             if ($result != null) {
@@ -57,15 +57,17 @@
                                     $productRows[] = $row;
                                 }
 
+                                if ($productRows != null && $negiciationRow != null) {
 
-                                foreach ($productRows as $product) {
-                                    foreach ($negiciationRow as $negociation) {
-                                        if ($negociation["idProduct"] == $product["id"]) {
-                                            $name = $product["Name"];
-                                            $price = $product["Price"];
-                                            $buying = $negociation["idUser"] == $userId;
-                                            
-                                            include "template/userProfileHistory.php";
+                                    foreach ($productRows as $product) {
+                                        foreach ($negiciationRow as $negociation) {
+                                            if ($negociation["idProduct"] == $product["id"]) {
+                                                $name = $product["Name"];
+                                                $price = $product["Price"];
+                                                $buying = $negociation["idUser"] == $userId;
+
+                                                include "template/userProfileHistory.php";
+                                            }
                                         }
                                     }
                                 }
