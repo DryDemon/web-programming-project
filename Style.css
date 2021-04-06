@@ -247,7 +247,7 @@ section .Container .MinimumBid {
 }
 
 .SideBarContainer {
-    min-width: 8rem;
+    z-index: 99;
     background-color: rgba(0, 123, 255, 0.5);
     padding-top: 1rem;
     padding-bottom: 1rem;
