@@ -127,6 +127,7 @@
                     $result = getAllProductInDBByDate();
                     while ($row = $result->fetch_array(MYSQLI_BOTH)) {
                         $productRows[] = $row;
+                        $productRowsqs[] = $row;
                     }
 
                     $result = getAllTransactionsInDBByDate();
@@ -146,20 +147,16 @@
                         return true;
                     }
 
-                    $productRows = (array_filter($productRows, "isInSearch"));
-                    $negociationRows = (array_filter($productRows, "isInSearch"));
-
+                    $productRowsqs = (array_filter($productRowsqs, "isInSearch"));
                     $categories = [
                         "Auction", "Best Offer", "Instant Buy"
                     ];
-
-                    if ($productRows != null && $transactionRows != null) {
-
+                    if ($productRowsqs != null && $transactionRows != null) {
+                        
                         foreach ($categories as $currentCategory) {
-
-                            foreach ($productRows as $row) {
+                            
+                            foreach ($productRowsqs as $row) {
                                 foreach ($transactionRows as $transaction) {
-
                                     if ($transaction["idproduct"] == $row["id"]) {
 
                                         $name = $row["Name"];
@@ -173,7 +170,6 @@
                                         $idSeller = $transaction["idSeller"];
                                         $productId = $row["id"];
                                         $type = $transaction["Type"];
-
 
                                         if ($currentCategory == $type) {
 
