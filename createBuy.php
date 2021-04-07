@@ -32,7 +32,7 @@
     require_once "userConnection.php";//get the necessecary variable to complete the query
     $iduser = getCurrentUserData()[0];
     $idproduct = $_POST['productId'];
-    echo $idproduct;
+    // echo $idproduct;
     $idseller =  getIdSeller($idproduct);
     $currentOffer = $_POST['price'];
     $Offer = $currentOffer;
