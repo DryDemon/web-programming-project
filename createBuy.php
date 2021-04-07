@@ -48,5 +48,6 @@
         //add js
     }
    
+    header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/Shop.php");
 
 ?>
