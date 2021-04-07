@@ -41,13 +41,15 @@
         $dbConn->query('INSERT INTO Negotiation (idUser,idSeller,Status,inComingOffer,currentOffer,idProduct) VALUES ('.$iduser.','.$idseller.',\'Accepted\','.$Offer.','.$currentOffer.','.$idproduct.')');
         echo '<hr> done';
         $dbConn->query('DELETE FROM Transaction WHERE idproduct = '.$idproduct);
+        header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/Shop.php");
     }
     else
     {
-        echo'verifier profile';
-        //add js
+        echo '<h1>Please, Fill out your profile before buying anything.</h1>';
+        echo "<a href='Profile.php'>Go To Profile</a>";
+        echo "<h1>Please verify your informations</h1>";
+
     }
    
-    header( "Location: "."http://".$_SERVER["HTTP_HOST"]."/Shop.php");
 
 ?>
