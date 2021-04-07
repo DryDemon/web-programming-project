@@ -54,13 +54,13 @@
                                 }
                                 ?>
                         </tbody>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
                                 <th>Product Name</th>
                                 <th>Recommended Price</th>
                                 <th>In Comming Offer</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> -->
                     </table>
                 </div>
             </div>
