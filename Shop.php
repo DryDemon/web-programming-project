@@ -19,14 +19,14 @@
             <a class="NavMenuLogo">FunMarket</a>
             <?php
 
-                require_once "userConnection.php";
-                $utilisateur = getCurrentUserData();
+            require_once "userConnection.php";
+            $utilisateur = getCurrentUserData();
 
-                if (isUserConnected() && $utilisateur[3] == "Admin@admin.com") {
-                    
-                        echo '<a style="color:#f30808;">ADMIN</a>';
-                    }
-             ?>       
+            if (isUserConnected() && $utilisateur[3] == "Admin@admin.com") {
+
+                echo '<a style="color:#f30808;">ADMIN</a>';
+            }
+            ?>
 
             <div class="NavMenuButtons">
 
@@ -88,12 +88,12 @@
                     }
 
                     foreach ($cats as $cat) {
-                            $checked = "";
+                        $checked = "";
 
                         echo "<li style='color:white;'><input onchange='reloadFilter()' type='checkbox' checked='checked' id='" . $cat . "' name='" . $cat . "'/><label for='" . $cat . "'>" . $cat . "</label></li>";
                     }
 
-                    echo "<input name='cats' id='cats' type='hidden' value='".implode(",", $cats)."'/>";
+                    echo "<input name='cats' id='cats' type='hidden' value='" . implode(",", $cats) . "'/>";
                     ?>
                 </ul>
             </div>
@@ -123,6 +123,9 @@
                     <?php
 
                     require_once "getSql.php";
+                    require_once "userConnection.php";
+
+                    $isUserConnected = isUserConnected();
 
                     $result = getAllProductInDBByDate();
                     while ($row = $result->fetch_array(MYSQLI_BOTH)) {
@@ -152,9 +155,9 @@
                         "Auction", "Best Offer", "Instant Buy"
                     ];
                     if ($productRowsqs != null && $transactionRows != null) {
-                        
+
                         foreach ($categories as $currentCategory) {
-                            
+
                             foreach ($productRowsqs as $row) {
                                 foreach ($transactionRows as $transaction) {
                                     if ($transaction["idproduct"] == $row["id"]) {
@@ -187,26 +190,26 @@
         </div>
     </section>
     <dialog id="userlist">
-            <form method="POST" action="adminUserRemove.php">
-                <label>Select the user you want to remove.</label><br>
-                <a type="button" onClick="CloseDialog()">Close</a>
-                <button type="submit">Remove</button>
+        <form method="POST" action="adminUserRemove.php">
+            <label>Select the user you want to remove.</label><br>
+            <a type="button" onClick="CloseDialog()">Close</a>
+            <button type="submit">Remove</button>
 
-                <select name="userSelected">
-                    <option value="">--Select a User--</option>
-                    <?php
-                    require_once("mysqlConnection.php");
-                    $dbConn = MyConnection();
-                    $userResult = $dbConn->query('SELECT Email FROM User WHERE Email != \'Admin@admin.com\';');
+            <select name="userSelected">
+                <option value="">--Select a User--</option>
+                <?php
+                require_once("mysqlConnection.php");
+                $dbConn = MyConnection();
+                $userResult = $dbConn->query('SELECT Email FROM User WHERE Email != \'Admin@admin.com\';');
 
-                    while ($row = $userResult->fetch_row()) {
-                        echo '<option value="' . $row[0] . '">' . $row[0] . '</option>';
-                    }
-                    $dbConn . close();
-                    ?>
-                </select>
+                while ($row = $userResult->fetch_row()) {
+                    echo '<option value="' . $row[0] . '">' . $row[0] . '</option>';
+                }
+                $dbConn . close();
+                ?>
+            </select>
 
-            </form>
+        </form>
     </dialog>
     <footer>
         <div class="container">

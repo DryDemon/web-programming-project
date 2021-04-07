@@ -48,24 +48,32 @@
                 }
                 ?>
                 <form>
+                <?php 
+                if($isUserConnected){
+
+                    echo'
                     <div class="BidButton">
-                        <a id="Open" onclick="OpenDialog('<?php echo $type; ?>', '<?php echo $productId; ?>')" class="DisplayA">
-                            <?php
-                            switch ($type) {
-                                case "Auction":
-                                    echo "Bid !";
-                                    break;
-                                case "Best Offer":
-                                    echo "Offer !";
-                                    break;
+                    <a id="Open" onclick="OpenDialog('.$type.', '.$productId.')" class="DisplayA">';
+                    
+                    switch ($type) {
+                        case "Auction":
+                            echo "Bid !";
+                            break;
+                            case "Best Offer":
+                                echo "Offer !";
+                                break;
                                 case "Instant Buy":
                                     echo "Buy";
                                     break;
+                                }
+                                echo '
+                                </a>
+                                <input type="hidden" id="TypeOfSell" value="'.$type.'" />
+                                </div>';
+                            }else{
+                                echo "<p>Please Sign in to buy the product</p>";
                             }
-                            ?>
-                        </a>
-                        <input type="hidden" id="TypeOfSell" value="<?php echo $type; ?>" />
-                    </div>
+                    ?>
                 </form>
                 <div class="MinimumBid">
                     <label class="MiniBid">
