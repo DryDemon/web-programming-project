@@ -53,7 +53,7 @@
 
                     echo'
                     <div class="BidButton">
-                    <a id="Open" onclick="OpenDialog('.$type.', '.$productId.')" class="DisplayA">';
+                    <a id="Open" onclick="OpenDialog(`'.$type.'`, '.$productId.')" class="DisplayA">';
                     
                     switch ($type) {
                         case "Auction":
